@@ -1,0 +1,37 @@
+pkgname=filesystem
+pkgver=20220103
+url="https://github.com/riscygeek/micro-linux"
+description="Basic filesystem layout"
+
+prepare() {
+   true
+}
+
+build() {
+   true
+}
+
+package() {
+   # Create a basic filesystem structure.
+   mkdir -pv "$D"/{boot,dev,etc,home,mnt,opt,proc,root,run,srv,sys}
+   mkdir -pv "$D"/usr{,/local}/{bin,include,lib,libexec,share,src}
+   mkdir -pv "$D"/var/{lock,log,run,spool}
+   mkdir -pvm 1777 "$D/tmp"
+   mkdir -pvm 1777 "$D/var/tmp"
+   mkdir -pvm 0700 "$D/root"
+
+   # Create symlinks.
+   ln -sfv ../etc          "$D/usr/etc"
+   ln -sfv bin             "$D/usr/sbin"
+   ln -sfv usr/bin         "$D/usr/bin"
+   ln -sfv usr/sbin        "$D/usr/sbin"
+   ln -sfv usr/lib         "$D/usr/lib"
+   ln -sfv ../proc/mounts  "$D/etc/mtab"
+
+   # Create the log file.
+   touch                   "$D/var/log/lastlog"
+   chmod -vm 644           "$D/var/log/lastlog"
+
+   # Copy the system-configuration files.
+   cp -rv "$F"/*           "$D/"
+}
