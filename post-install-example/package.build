@@ -20,6 +20,6 @@ build() {
 }
 
 package() {
-   mkdir -pv "$F/.meta"
+   mkdir -pv "$D/.meta"
    cp -v "$F/post-install.sh" "$D/.meta/post-install.sh"
 }
