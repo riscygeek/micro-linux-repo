@@ -1,0 +1,25 @@
+pkgname=post-install-example
+pkgver=1
+url="https://github.com/riscygeek/minipkg2"
+description="A package to test the post_install feature."
+
+bdepends=()
+depends=()
+
+provides=()
+conflicts=()
+
+sources=()
+
+prepare() {
+   true
+}
+
+build() {
+   true
+}
+
+package() {
+   mkdir -pv "$F/.meta"
+   cp -v "$F/post-install.sh" "$D/.meta/post-install.sh"
+}
