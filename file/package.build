@@ -6,7 +6,7 @@ description="File type identification utility"
 bdepends=()
 depends=()
 
-sources=(https://ftp.astron.com/pub/file/file-${pkgver}.tar.gz)
+sources=(http://ftp.astron.com/pub/file/file-${pkgver}.tar.gz)
 
 prepare() {
    tar -xf "${S}/file-${pkgver}.tar.gz"
