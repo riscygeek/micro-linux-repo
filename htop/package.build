@@ -14,7 +14,7 @@ prepare() {
 }
 
 build() {
-   ./configure --prefix=/usr
+   ./configure --prefix=/usr --host="$HOST"
    make
 }
 
