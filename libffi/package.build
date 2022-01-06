@@ -16,6 +16,7 @@ prepare() {
 build() {
    ./configure                   \
       --prefix=/usr              \
+      --host="$HOST"             \
       --with-gcc-arch=native     \
       --disable-exec-static-tramp
    make
