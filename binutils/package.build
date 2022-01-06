@@ -13,12 +13,14 @@ prepare() {
 }
 
 build() {
-   ./configure                \
-      --prefix=/usr           \
-      --host="$HOST"          \
-      --with-sysroot="$ROOT"  \
-      --disable-nls           \
-      --disable-multilib      \
+   ./configure                      \
+      --prefix=/usr                 \
+      --host="$HOST"                \
+      --target="$HOST"              \
+      --program-prefix=             \
+      --with-build-sysroot="$ROOT"  \
+      --disable-nls                 \
+      --disable-multilib            \
       --disable-werror
    make
 }
