@@ -1,0 +1,23 @@
+pkgname=bash
+pkgver=5.1
+url="https://www.gnu.org/software/bash"
+description="The GNU Bourne Again shell"
+
+bdepends=()
+depends=()
+
+sources=(https://ftp.gnu.org/gnu/bash/bash-${pkgver}.tar.gz)
+
+prepare() {
+   tar -xf "${S}/bash-${pkgver}.tar.gz"
+   cd "bash-${pkgver}"
+}
+
+build() {
+   ./configure --prefix=/usr --build="$BUILD" --without-bash-malloc
+   make
+}
+
+package() {
+   make DESTDIR="$D" install
+}
