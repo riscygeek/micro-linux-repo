@@ -16,7 +16,7 @@ prepare() {
 }
 
 build() {
-   ./configure --prefix=/usr --enable-static --with-curses
+   ./configure --prefix=/usr --enable-static --with-curses --host="$HOST"
    make SHLIB_LIBS="-lncursesw"
 }
 
