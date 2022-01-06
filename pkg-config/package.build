@@ -14,7 +14,7 @@ prepare() {
 }
 
 build() {
-   ./configure --prefix=/usr --with-internal-glib --disable-host-tools
+   ./configure --prefix=/usr --with-internal-glib --disable-host-tools --host="$HOST"
    make
 }
 
