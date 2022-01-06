@@ -13,7 +13,7 @@ prepare() {
 }
 
 build() {
-   ./configure --prefix=/usr --enable-static --enable-libgdbm-compat
+   ./configure --prefix=/usr --enable-static --enable-libgdbm-compat --host="$HOST"
    make
 }
 
