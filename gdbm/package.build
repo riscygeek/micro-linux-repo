@@ -3,8 +3,7 @@ pkgver=1.20
 url="https://www.gnu.org/software/gdbm"
 description="GNU database library"
 
-bdepends=(readline)
-depends=()
+depends=(readline)
 
 sources=(https://ftp.gnu.org/gnu/gdbm/gdbm-${pkgver}.tar.gz)
 

@@ -3,8 +3,7 @@ pkgver=8.1
 url="https://tiswww.case.edu/php/chet/readline/rltop.html"
 description="Compression library implementing the deflate compression method found in gzip and PKZIP"
 
-bdepends=(ncurses)
-depends=()
+depends=(ncurses)
 
 sources=(https://ftp.gnu.org/gnu/readline/readline-${pkgver}.tar.gz)
 
