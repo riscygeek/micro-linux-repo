@@ -14,7 +14,7 @@ prepare() {
 }
 
 build() {
-   ./configure --prefix=/usr --build="$BUILD" --without-bash-malloc
+   ./configure --prefix=/usr --build="$BUILD" --without-bash-malloc --host="$HOST"
    make
 }
 
