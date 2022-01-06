@@ -1,0 +1,28 @@
+pkgname=binutils
+pkgver=2.37
+url="https://www.gnu.org/software/binutils"
+description="A set of programs to assemble and manipulate binary and object files"
+
+depends=()
+
+sources=(https://ftp.gnu.org/gnu/binutils/binutils-${pkgver}.tar.gz)
+
+prepare() {
+   tar -xf "${S}/binutils-${pkgver}.tar.gz"
+   cd "binutils-${pkgver}"
+}
+
+build() {
+   ./configure                \
+      --prefix=/usr           \
+      --host="$HOST"          \
+      --with-sysroot="$ROOT"  \
+      --disable-nls           \
+      --disable-multilib      \
+      --disable-werror
+   make
+}
+
+package() {
+   make DESTDIR="$D" install
+}
