@@ -16,6 +16,7 @@ prepare() {
 build() {
    ./configure             \
       --prefix=/usr        \
+      --host="$HOST"       \
       --enable-shared      \
       --with-system-expat  \
       --with-system-ffi    \
