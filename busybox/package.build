@@ -1,0 +1,59 @@
+pkgname=busybox
+pkgver=1.35.0
+url="https://busybox.net"
+description="Lightweight coreutils"
+
+bdepends=()
+depends=()
+
+sources=(https://busybox.net/downloads/busybox-${pkgver}.tar.bz2)
+
+bbarch() {
+   case "$HOST" in
+   x86_64-*|i[3456]86-*)
+      echo x86
+      ;;
+   arm-*|armv*-*|aarch64-*)
+      echo arm
+      ;;
+   riscv*-*)
+      echo riscv
+      ;;
+   *)
+      echo "Unsupported architecture: '$HOST'"
+      exit 1
+      ;;
+   esac
+}
+
+prepare() {
+   tar -xf "${S}/busybox-${pkgver}.tar.bz2"
+   cd "busybox-${pkgver}"
+
+   make distclean
+
+   if [ -f "$ROOT/etc/minipkg2/busybox.config" ]; then
+      cp "$ROOT/etc/minipkg2/busybox.config" .config
+   else
+      make ARCH="$(bbarch)" defconfig
+   fi
+
+   sed -i 's/\(CONFIG_\)\(.*\)\(INETD\)\(.*\)=y/# \1\2\3\4 is not set/g' .config
+   sed -i 's/\(CONFIG_IFPLUGD\)=y/# \1 is not set/' .config
+   sed -i 's/\(CONFIG_FEATURE_WTMP\)=y/# \1 is not set/' .config
+   sed -i 's/\(CONFIG_FEATURE_UTMP\)=y/# \1 is not set/' .config
+   sed -i 's/\(CONFIG_UDPSVD\)=y/# \1 is not set/' .config
+   sed -i 's/\(CONFIG_TCPSVD\)=y/# \1 is not set/' .config
+}
+
+bbmake() {
+   make ARCH="$(bbarch)" CROSS_COMPILE="${HOST}-" "$@"
+}
+
+build() {
+   bbmake
+}
+
+package() {
+   bbmake CONFIG_PREFIX="$ROOT" install
+}
