@@ -18,17 +18,17 @@ prepare() {
 }
 
 build() {
-   CONFIG_SITE=config.site ./configure \
-      --prefix=/usr                    \
-      --build="$(gcc -dumpmachine)"    \
-      --host="$HOST"                   \
-      --enable-shared                  \
-      --enable-ipv6                    \
-      --disable-profiling              \
-      --with-system-expat              \
-      --with-system-ffi                \
-      --with-ensurepip=yes             \
-      --with-libs=gcov                 \
+   CONFIG_SITE=config.site ./configure    \
+      --prefix=/usr                       \
+      --build="$(gcc -dumpmachine)"       \
+      --host="$HOST"                      \
+      --enable-shared                     \
+      --enable-ipv6                       \
+      --disable-profiling                 \
+      --with-system-expat                 \
+      --with-system-ffi                   \
+      --with-ensurepip=yes                \
+      --with-libs='c m pthreads gcov dl'  \
       --enable-optimizations
 
    make
