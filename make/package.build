@@ -14,7 +14,7 @@ prepare() {
 }
 
 build() {
-   ./configure --prefix=/usr --host="$HOST"
+   ./configure --prefix=/usr --host="$HOST" --without-guile
    make
 }
 
