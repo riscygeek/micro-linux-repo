@@ -10,21 +10,25 @@ sources=(https://ftp.gnu.org/gnu/gcc/gcc-${pkgver}/gcc-${pkgver}.tar.gz)
 prepare() {
    tar -xf "${S}/gcc-${pkgver}.tar.gz"
    cd "gcc-${pkgver}"
+   ./contrib/download_prerequisites
 }
 
 build() {
-   ./configure                         \
-      --prefix=/usr                    \
-      --target="$HOST"                 \
-      --host="$HOST"                   \
-      --program-prefix=                \
-      --with-build-sysroot="$ROOT"     \
-      --disable-nls                    \
-      --disable-multilib               \
-      --disable-libsanitizer           \
-      --disable-libstdcxx-pch          \
-      --enable-languages=c,c++
-   make
+   mkdir -p build
+   pushd build
+      ../configure                        \
+         --prefix=/usr                    \
+         --target="$HOST"                 \
+         --host="$HOST"                   \
+         --program-prefix=                \
+         --with-build-sysroot="$ROOT"     \
+         --disable-nls                    \
+         --disable-multilib               \
+         --disable-libsanitizer           \
+         --disable-libstdcxx-pch          \
+         --enable-languages=c,c++
+      make -j$(nproc)
+   popd
 }
 
 package() {
