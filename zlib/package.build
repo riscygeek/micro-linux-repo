@@ -6,7 +6,7 @@ description="Compression library implementing the deflate compression method fou
 bdepends=()
 depends=()
 
-sources=(https://zlib.net/zlib-1.2.11.tar.xz)
+sources=(https://zlib.net/zlib-${pkgver}.tar.xz)
 
 prepare() {
    tar -xf "${S}/zlib-${pkgver}.tar.xz"
@@ -14,7 +14,15 @@ prepare() {
 }
 
 build() {
-   ./configure --prefix=/usr --host="$HOST"
+   if [ -n "$HOST" ]; then
+      CHOST="$HOST"           \
+      CC="${HOST}-gcc"        \
+      AR="${HOST}-ar"         \
+      RANLIB="${HOST}-ranlib" \
+      ./configure --prefix=/usr
+   else
+      ./configure --prefix=/usr
+   fi
    make
 }
 
