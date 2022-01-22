@@ -19,6 +19,7 @@ build() {
       --build="$(gcc -dumpmachine)" \
       --host="$HOST"                \
       --enable-shared               \
+      --enable-ipv6                 \
       --with-system-expat           \
       --with-system-ffi             \
       --with-ensurepip=yes          \
