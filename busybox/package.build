@@ -55,5 +55,5 @@ build() {
 }
 
 package() {
-   bbmake CONFIG_PREFIX="$ROOT" install
+   bbmake CONFIG_PREFIX="$D" install
 }
