@@ -18,7 +18,8 @@ prepare() {
 }
 
 build() {
-   CONFIG_SITE=config.site LIBS="-lgcov"  \
+   CONFIG_SITE=config.site                \
+   LIBS="-lgcov" LDFLAGS="--coverage"     \
       ./configure                         \
       --prefix=/usr                       \
       --build="$(gcc -dumpmachine)"       \
