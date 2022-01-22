@@ -19,7 +19,6 @@ prepare() {
 
 build() {
    CONFIG_SITE=config.site                \
-   LIBS="-lgcov --coverage"               \
       ./configure                         \
       --prefix=/usr                       \
       --build="$(gcc -dumpmachine)"       \
@@ -29,8 +28,7 @@ build() {
       --disable-profiling                 \
       --with-system-expat                 \
       --with-system-ffi                   \
-      --with-ensurepip=yes                \
-      --enable-optimizations
+      --with-ensurepip=yes
 
    make
 }
