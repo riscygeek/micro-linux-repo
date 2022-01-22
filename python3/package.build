@@ -24,10 +24,10 @@ build() {
       --host="$HOST"                   \
       --enable-shared                  \
       --enable-ipv6                    \
+      --disable-profiling              \
       --with-system-expat              \
       --with-system-ffi                \
       --with-ensurepip=yes             \
-      --with-libs=gcov                 \
       --enable-optimizations
 
    make
