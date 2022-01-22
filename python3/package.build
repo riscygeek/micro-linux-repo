@@ -18,7 +18,8 @@ prepare() {
 }
 
 build() {
-   CONFIG_SITE=config.site ./configure    \
+   CONFIG_SITE=config.site LIBS=gcov      \
+      ./configure                         \
       --prefix=/usr                       \
       --build="$(gcc -dumpmachine)"       \
       --host="$HOST"                      \
@@ -28,7 +29,6 @@ build() {
       --with-system-expat                 \
       --with-system-ffi                   \
       --with-ensurepip=yes                \
-      --with-libs='c m pthreads gcov dl'  \
       --enable-optimizations
 
    make
