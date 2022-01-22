@@ -27,6 +27,7 @@ build() {
       --with-system-expat              \
       --with-system-ffi                \
       --with-ensurepip=yes             \
+      --with-libs=gcov                 \
       --enable-optimizations
 
    make
