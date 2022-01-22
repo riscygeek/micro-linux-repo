@@ -1,5 +1,5 @@
 pkgname=filesystem
-pkgver=20220103
+pkgver=20220122
 url="https://github.com/riscygeek/micro-linux"
 description="Basic filesystem layout"
 
@@ -34,5 +34,5 @@ package() {
    chmod -vm 644           "$D/var/log/lastlog"
 
    # Copy the system-configuration files.
-   cp -rv "$F"/*           "$D/"
+   cp -prv "$F"/*          "$D/"
 }
