@@ -11,18 +11,22 @@ sources=(https://www.python.org/ftp/python/${pkgver}/Python-${pkgver}.tar.xz)
 prepare() {
    tar -xf "${S}/Python-${pkgver}.tar.xz"
    cd "Python-${pkgver}"
+
+   # Fix 'set ac_cv_file__dev_ptmx to yes/no in your CONFIG_SITE file when cross compiling' error.
+   echo 'ac_cv_file__dev_ptmx=no' > config.site
+   echo 'ac_cv_file__dev_ptc=no' >> config.site
 }
 
 build() {
-   ./configure                      \
-      --prefix=/usr                 \
-      --build="$(gcc -dumpmachine)" \
-      --host="$HOST"                \
-      --enable-shared               \
-      --enable-ipv6                 \
-      --with-system-expat           \
-      --with-system-ffi             \
-      --with-ensurepip=yes          \
+   CONFIG_SITE=config.site ./configure \
+      --prefix=/usr                    \
+      --build="$(gcc -dumpmachine)"    \
+      --host="$HOST"                   \
+      --enable-shared                  \
+      --enable-ipv6                    \
+      --with-system-expat              \
+      --with-system-ffi                \
+      --with-ensurepip=yes             \
       --enable-optimizations
 
    make
