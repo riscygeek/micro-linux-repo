@@ -8,7 +8,7 @@ depends=(ncurses)
 sources=(https://ftp.gnu.org/gnu/readline/readline-${pkgver}.tar.gz)
 
 prepare() {
-   tar -xf "${S}/readline-${pkgver}.tar.xz"
+   tar -xf "${S}/readline-${pkgver}.tar.gz"
    cd "readline-${pkgver}"
 
    sed -i '/MV.*old/d' Makefile.in
