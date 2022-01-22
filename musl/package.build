@@ -1,0 +1,27 @@
+pkgname=musl
+pkgver=1.2.2
+url="https://musl.libc.org"
+description="Lightweight C standard library"
+
+bdepends=()
+depends=()
+
+sources=(https://musl.libc.org/releases/musl-${pkgver}.tar.gz)
+
+prepare() {
+   tar -xf "${S}/musl-${pkgver}.tar.gz"
+   cd "musl-${pkgver}"
+}
+
+build() {
+   if [ -n "$HOST" ]; then
+      ./configure CROSS_COMPILE="${HOST}-" --prefix=/usr --target="$HOST"
+   else
+      ./configure --prefix=/usr
+   fi
+   make
+}
+
+package() {
+   make DESTDIR="$D" install
+}
