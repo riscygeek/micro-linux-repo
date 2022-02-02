@@ -3,7 +3,7 @@
    - [x] brotli
       - [x] cmake
          - [x] libuv
-   - [ ] libidn2
+   - [x] libidn2
       - [x] libunistring
    - [ ] libnghttp2
       - [ ] libxml2

@@ -1,0 +1,27 @@
+pkgname=libnghttp2
+pkgver=1.44.0
+url="https://nghttp2.org/"
+description="Framing layer of HTTP/2 is implemented as a reusable C library"
+
+depends=(libxml2)
+
+sources=(https://github.com/nghttp2/nghttp2/releases/download/v${pkgver}/nghttp2-${pkgver}.tar.xz)
+
+prepare() {
+   tar -xf "$S/nghttp2-${pkgver}.tar.xz"
+   cd "nghttp2-${pkgver}"
+}
+
+build() {
+   ./configure          \
+      --prefix=/usr     \
+      --enable-static   \
+      --enable-shared   \
+      --enable-lib-only
+
+   make
+}
+
+package() {
+   make DESTDIR="$D" install
+}
