@@ -11,6 +11,6 @@
    - [x] zstd
       - [x] xz
       - [x] lz4
-- [ ] libgmp
+- [x] libgmp
 - [ ] libmpc
 - [ ] libmpfr
