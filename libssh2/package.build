@@ -1,0 +1,26 @@
+pkgname=libssh2
+pkgver=1.9.0
+url="https://www.libssh2.org/"
+description="A library implementing the SSH2 protocol as defined by Internet Drafts"
+
+depends=(openssl zlib)
+
+sources=(https://www.libssh2.org/download/libssh2-${pkgver}.tar.gz)
+
+prepare() {
+   tar -xf "$S/libssh2-${pkgver}.tar.gz"
+   cd "libssh2-${pkgver}"
+}
+
+build() {
+   ./configure          \
+      --prefix=/usr     \
+      --enable-static   \
+      --enable-shared
+
+   make
+}
+
+package() {
+   make DESTDIR="$D" install
+}

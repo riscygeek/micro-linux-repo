@@ -7,7 +7,7 @@
       - [x] libunistring
    - [x] libnghttp2
       - [x] libxml2
-   - [ ] libssh2
+   - [x] libssh2
    - [ ] zstd
       - [ ] xz
       - [ ] lz4
