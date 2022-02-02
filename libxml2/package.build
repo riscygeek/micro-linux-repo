@@ -1,0 +1,28 @@
+pkgname=libxml2
+pkgver=2.9.12
+url="http://www.xmlsoft.org/"
+description="XML parsing library, version 2"
+
+depends=(python3 readline)
+
+sources=(http://xmlsoft.org/sources/libxml2-${pkgver}.tar.gz)
+
+prepare() {
+   tar -xf "$S/libxml2-${pkgver}.tar.gz"
+   cd "libxml2-${pkgver}"
+}
+
+build() {
+   ./configure          \
+      --prefix=/usr     \
+      --enable-static   \
+      --enable-shared   \
+      --with-history    \
+      --with-python=/usr/bin/python3
+
+   make
+}
+
+package() {
+   make DESTDIR="$D" install
+}

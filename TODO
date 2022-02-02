@@ -5,8 +5,8 @@
          - [x] libuv
    - [x] libidn2
       - [x] libunistring
-   - [ ] libnghttp2
-      - [ ] libxml2
+   - [x] libnghttp2
+      - [x] libxml2
    - [ ] libssh2
    - [ ] zstd
       - [ ] xz
