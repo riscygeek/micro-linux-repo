@@ -4,7 +4,7 @@
       - [x] cmake
          - [x] libuv
    - [ ] libidn2
-      - [ ] libunistring
+      - [x] libunistring
    - [ ] libnghttp2
       - [ ] libxml2
    - [ ] libssh2

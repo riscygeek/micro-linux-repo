@@ -1,0 +1,26 @@
+pkgname=libunistring
+pkgver=1.1.6
+url="https://www.gnu.org/software/libunistring"
+description="Library for manipulating Unicode strings and C strings"
+
+depends=()
+
+sources=(https://ftp.gnu.org/gnu/libunistring/libunistring-${pkgver}.tar.xz)
+
+prepare() {
+   tar -xf "$S/libunistring-${pkgver}.tar.xz"
+   cd "libunistring-${pkgver}
+}
+
+build() {
+   ./configure          \
+      --prefix=/usr     \
+      --enable-static   \
+      --enable-shared
+
+   make
+}
+
+package() {
+   make DESTDIR="$D" install
+}
