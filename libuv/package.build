@@ -1,0 +1,25 @@
+pkgname=libuv
+pkgver=1.42.0
+url="https://github.com/libuv/libuv"
+description="Multi-platform support library with a focus on asynchronous I/O"
+
+depends=()
+
+sources=(https://dist.libuv.org/dist/v${pkgver}/libuv-v${pkgver}.tar.gz)
+
+prepare() {
+   tar -xf "$S/libuv-v${pkgver}.tar.gz"
+   cd "libuv-v${pkgver}"
+}
+
+build() {
+   sh autogen.sh
+   ./configure          \
+      --prefix=/usr     \
+      --enable-static   \
+      --enable-shared
+}
+
+package() {
+   make DESTDIR="$D" install
+}
