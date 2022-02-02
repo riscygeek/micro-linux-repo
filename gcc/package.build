@@ -3,7 +3,7 @@ pkgver=11.2.0
 url="https://www.gnu.org/software/gcc"
 description="A set of programs to assemble and manipulate binary and object files"
 
-depends=(binutils)
+depends=(binutils libgmp libmpc libmpfr zlib)
 
 sources=(https://ftp.gnu.org/gnu/gcc/gcc-${pkgver}/gcc-${pkgver}.tar.gz)
 
@@ -23,6 +23,7 @@ build() {
          --host="$HOST"                   \
          --program-prefix=                \
          --with-build-sysroot="$ROOT"     \
+         --with-system-zlib               \
          --disable-nls                    \
          --disable-multilib               \
          --disable-libsanitizer           \

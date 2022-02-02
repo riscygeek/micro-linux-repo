@@ -1,0 +1,61 @@
+pkgname=curl
+pkgver=7.81.0
+url="https://curl.se"
+description="An URL retrieval utility and library."
+
+depends=(openssl zlib zstd brotli libnghttp2 libssh2 libidn2)
+rdepends=(make-ca)
+
+prepare() {
+   tar -xf "$S/curl-${pkgver}.tar.gz"
+   cd "curl-${pkgver}"
+}
+
+build() {
+   ./configure                         \
+      --prefix=/usr                    \
+      --enable-shared                  \
+      --enable-static                  \
+      --enable-optimize                \
+      --disable-debug                  \
+      --enable-http                    \
+      --enable-ftp                     \
+      --enable-file                    \
+      --disable-ldap                   \
+      --disable-ldaps                  \
+      --disable-rtsp                   \
+      --enable-proxy                   \
+      --disable-dict                   \
+      --disable-telnet                 \
+      --enable-tftp                    \
+      --disable-pop3                   \
+      --disable-imap                   \
+      --disable-smb                    \
+      --disable-smtp                   \
+      --disable-gopher                 \
+      --disable-mqtt                   \
+      --disable-manual                 \
+      --enable-libgcc                  \
+      --enable-ipv6                    \
+      --enable-crypto-auth             \
+      --enable-threaded-resolver       \
+      --with-nghttp2                   \
+      --with-zlib                      \
+      --with-zstd                      \
+      --with-brotli                    \
+      --with-libssh2                   \
+      --with-libidn2                   \
+      --without-ngtcp2                 \
+      --without-hyper                  \
+      --without-ngtcp2                 \
+      --without-zsh-functions-dir      \
+      --without-fish-functions-dir     \
+      --with-openssl                   \
+      --with-ca-path=/etc/ssl/certs
+
+   make
+}
+
+package() {
+   make DESTDIR="$D" install
+}

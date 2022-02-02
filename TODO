@@ -1,0 +1,13 @@
+# Packages
+- [x] curl
+   - [ ] brotli
+   - [ ] libidn2
+      - [ ] libunistring
+   - [ ] libnghttp2
+   - [ ] libssh2
+   - [ ] zstd
+      - [ ] xz
+      - [ ] lz4
+- [ ] libgmp
+- [ ] libmpc
+- [ ] libmpfr
