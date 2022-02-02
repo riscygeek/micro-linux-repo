@@ -1,0 +1,21 @@
+pkgname=zstd
+pkgver=1.5.0
+url="https://facebook.github.io/zstd/"
+description="Zstandard - Fast real-time compression algorithm"
+
+depends=(zlib xz lz4)
+
+sources=(https://github.com/facebook/zstd/releases/download/v${pkgver}/zstd-${pkgver}.tar.gz)
+
+prepare() {
+   tar -xf "$S/zstd-${pkgver}.tar.gz"
+   cd "zstd-${pkgver}"
+}
+
+build() {
+   make
+}
+
+package() {
+   make prefix="$D/usr" install
+}
