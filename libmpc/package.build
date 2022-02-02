@@ -3,7 +3,7 @@ pkgver=1.2.1
 url="http://www.multiprecision.org/"
 description="Library for the arithmetic of complex numbers with arbitrarily high precision"
 
-depends=()
+depends=(libmpfr)
 
 sources=(https://ftp.gnu.org/gnu/mpc/mpc-${pkgver}.tar.gz)
 

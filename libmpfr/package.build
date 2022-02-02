@@ -1,0 +1,27 @@
+pkgname=libmpfr
+pkgver=4.1.0
+url="https://www.mpfr.org/"
+description="Multiple-precision floating-point library"
+
+depends=(libgmp)
+
+sources=(https://www.mpfr.org/mpfr-${pkgver}/mpfr-${pkgver}.tar.xz)
+
+prepare() {
+   tar -xf "$S/mpfr-${pkgver}.tar.xz"
+   cd "mpfr-${pkgver}"
+}
+
+build() {
+   ./configure          \
+      --prefix=/usr     \
+      --enable-static   \
+      --enable-shared   \
+      --enable-thread-safe
+
+   make
+}
+
+package() {
+   make DESTDIR="$D" install
+}
