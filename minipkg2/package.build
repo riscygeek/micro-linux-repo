@@ -5,6 +5,7 @@ description="Package manager for Micro-Linux"
 
 depends=(curl)
 bdepends=(meson)
+rdepends=(git)
 
 sources=("https://github.com/riscygeek/minipkg2/archive/refs/tags/v${pkgver}.tar.gz")
 
