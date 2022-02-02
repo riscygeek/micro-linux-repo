@@ -1,8 +1,8 @@
 # Packages
 - [x] curl
-   - [ ] brotli
-      - [ ] cmake
-         - [ ] libuv
+   - [x] brotli
+      - [x] cmake
+         - [x] libuv
    - [ ] libidn2
       - [ ] libunistring
    - [ ] libnghttp2

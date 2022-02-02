@@ -1,0 +1,31 @@
+pkgname=brotli
+pkgver=1.77.0
+url="https://github.com/google/brotli"
+description="Generic-purpose lossless compression algorithm"
+
+bdepends=(cmake)
+
+sources=(https://github.com/google/brotli/archive/v${pkgver}/brotli-${pkgver}.tar.gz)
+
+prepare() {
+   tar -xf "$S/brotli-${pkgver}.tar.gz"
+   cd "brotli-${pkgver}"
+
+   sed -i 's@-R..libdir.@@' scripts/*.pc.in
+
+   mkdir build
+   cd build
+}
+
+build() {
+   cmake                            \
+      -DCMAKE_INSTALL_PREFIX=/usr   \
+      -DCMAKE_BUILD_TYPE=Release    \
+      ..
+
+   make
+}
+
+package() {
+   make DESTDIR="$D" install
+}
