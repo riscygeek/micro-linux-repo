@@ -1,0 +1,32 @@
+pkgname=cmake
+pkgver=3.21.2
+url="https://www.cmake.org"
+description="A cross-platform open-source make system"
+
+depends=(libuv zstd)
+
+sources=(https://cmake.org/files/v${pkgver}/cmake-${pkgver}.tar.gz)
+
+prepare() {
+   tar -xf "$S/cmake-${pkgver}.tar.gz"
+   cd "cmake-${pkgver}"
+
+   sed -i '/"lib64"/s/64//' Modules/GNUInstallDirs.cmake
+}
+
+build() {
+   ./bootstrap             \
+      --prefix=/usr        \
+      --system-libs        \
+      --mandir=/share/man  \
+      --no-system-jsoncpp  \
+      --no-system-librhash
+
+   make
+}
+
+package() {
+   make DESTDIR="$D" install
+}
+
+
