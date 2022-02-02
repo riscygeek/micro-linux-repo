@@ -1,0 +1,21 @@
+pkgname=lz4
+pkgver=1.9.3
+url="http://www.lz4.org/"
+description="Extremely fast compression algorithm"
+
+depends=()
+
+sources=(https://github.com/lz4/lz4/archive/refs/tags/v${pkgver}.tar.gz)
+
+prepare() {
+   tar -xf "$S/v${pkgver}.tar.gz"
+   cd "lz4-${pkgver}"
+}
+
+build() {
+   make
+}
+
+package() {
+   make prefix="$D/usr" install
+}

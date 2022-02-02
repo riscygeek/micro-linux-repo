@@ -10,7 +10,7 @@
    - [x] libssh2
    - [x] zstd
       - [x] xz
-      - [ ] lz4
+      - [x] lz4
 - [ ] libgmp
 - [ ] libmpc
 - [ ] libmpfr
