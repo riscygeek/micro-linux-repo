@@ -1,9 +1,12 @@
 # Packages
 - [x] curl
    - [ ] brotli
+      - [ ] cmake
+         - [ ] libuv
    - [ ] libidn2
       - [ ] libunistring
    - [ ] libnghttp2
+      - [ ] libxml2
    - [ ] libssh2
    - [ ] zstd
       - [ ] xz
