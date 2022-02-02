@@ -1,3 +1,7 @@
+# General
+- [ ] Add features=() variable
+- [ ] Add support for parallel building with $JOBS variable
+
 # Packages
 - [x] curl
    - [x] brotli
