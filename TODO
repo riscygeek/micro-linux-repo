@@ -9,7 +9,7 @@
       - [x] libxml2
    - [x] libssh2
    - [ ] zstd
-      - [ ] xz
+      - [x] xz
       - [ ] lz4
 - [ ] libgmp
 - [ ] libmpc
