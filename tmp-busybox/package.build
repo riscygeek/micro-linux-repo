@@ -33,7 +33,7 @@ prepare() {
 
    make distclean
 
-   cp "$ROOT/tmp/busybox.config" ".config"
+   cp "$F/bbconfig" ".config"
 }
 
 bbmake() {
