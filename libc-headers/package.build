@@ -1,0 +1,43 @@
+pkgname=libc-headers
+pkgver=5.16.5
+url="https://kernel.org"
+description="Linux kernel C header files"
+features=(sysroot cross-compile)
+ver_major="$(cut -d'.' -f1 <<< "$pkgver")"
+
+depends=()
+
+# https://mirrors.edge.kernel.org/pub/linux/kernel/v$(cut -d'.' -f1 <<<"$V_LINUX").x/$TAR_LINUX
+sources=(https://mirrors.edge.kernel.org/pub/linux/kernel/v${ver_major}.x/linux-${pkgver}.tar.xz)
+
+prepare() {
+   tar -xf "$S/linux-${pkgver}.tar.xz"
+   cd "linux-${pkgver}"
+}
+
+karch() {
+   [ -z "$HOST" ] && return
+   case "$HOST" in
+   i[3456]86-*|x86_64-*)
+      echo "ARCH=x86"
+      ;;
+   arm-*|armv*-*|aarch64-*)
+      echo "ARCH=arm"
+      ;;
+   riscv*-*)
+      echo "ARCH=riscv"
+      ;;
+   ,*)
+      echo "Failed to detect kernel CPU architecture for '$HOST'" >&2
+      exit 1
+      ;;
+   esac
+}
+
+build() {
+   make $(karch) mrproper
+}
+
+package() {
+   make $(karch) INSTALL_HDR_PATH="$D/usr" headers_install
+}
