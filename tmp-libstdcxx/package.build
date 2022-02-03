@@ -1,10 +1,10 @@
 pkgname=tmp-libstdcxx
 pkgver=11.2.0
 url="https://www.gnu.org/software/gcc"
-description="C++ library for tmp-gcc-stage1 (temporary)"
+description="C++ library for tmp-gcc (temporary)"
 features=()
 
-depends=(tmp-gcc-stage1)
+depends=(tmp-gcc)
 
 sources=(https://ftp.gnu.org/gnu/gcc/gcc-${pkgver}/gcc-${pkgver}.tar.gz)
 

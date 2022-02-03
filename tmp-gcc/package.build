@@ -1,0 +1,41 @@
+pkgname=tmp-gcc
+pkgver=11.2.0
+url="https://www.gnu.org/software/gcc"
+description="GNU C/C++ compiler (temporary)"
+features=(sysroot cross-compile)
+
+depends=(binutils)
+
+sources=(https://ftp.gnu.org/gnu/gcc/gcc-${pkgver}/gcc-${pkgver}.tar.gz)
+
+prepare() {
+   tar -xf "${S}/gcc-${pkgver}.tar.gz"
+   cd "gcc-${pkgver}"
+   ./contrib/download_prerequisites
+}
+
+build() {
+   mkdir -p build
+   pushd build
+      ../configure                          \
+         --prefix=/tools                    \
+         --target="$HOST"                   \
+         --host="$HOST"                     \
+         --with-build-sysroot="$ROOT"       \
+         --disable-nls                      \
+         --disable-multilib                 \
+         --disable-libsanitizer             \
+         --disable-libstdcxx                \
+         --enable-languages=c,c++
+      make -j$(nproc)
+   popd
+}
+
+package() {
+   pushd build
+      make DESTDIR="$D" install
+   popd
+
+   # Delete non-essential stuff.
+   rm -rf "$D/tools/share"
+}

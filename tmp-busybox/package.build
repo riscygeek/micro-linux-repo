@@ -1,0 +1,49 @@
+pkgname=tmp-busybox
+pkgver=1.35.0
+url="https://busybox.net"
+description="Lightweight coreutils (temporary)"
+features=(sysroot cross-compile)
+
+bdepends=()
+depends=()
+
+sources=(https://busybox.net/downloads/busybox-${pkgver}.tar.bz2)
+
+bbarch() {
+   case "$HOST" in
+   x86_64-*|i[3456]86-*)
+      echo x86
+      ;;
+   arm-*|armv*-*|aarch64-*)
+      echo arm
+      ;;
+   riscv*-*)
+      echo riscv
+      ;;
+   *)
+      echo "Unsupported architecture: '$HOST'"
+      exit 1
+      ;;
+   esac
+}
+
+prepare() {
+   tar -xf "${S}/busybox-${pkgver}.tar.bz2"
+   cd "busybox-${pkgver}"
+
+   make distclean
+
+   cp "$ROOT/tmp/busybox.config" ".config"
+}
+
+bbmake() {
+   make ARCH="$(bbarch)" CONFIG_SYSROOT="$ROOT" CROSS_COMPILE="${HOST}-" "$@"
+}
+
+build() {
+   bbmake
+}
+
+package() {
+   bbmake CONFIG_PREFIX="$D/tools" install
+}

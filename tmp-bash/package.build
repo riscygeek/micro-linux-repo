@@ -1,0 +1,33 @@
+pkgname=tmp-bash
+pkgver=5.1
+url="https://www.gnu.org/software/bash"
+description="The GNU Bourne Again shell"
+features=(sysroot cross-compile)
+
+bdepends=()
+depends=()
+
+sources=(https://ftp.gnu.org/gnu/bash/bash-${pkgver}.tar.gz)
+
+prepare() {
+   tar -xf "${S}/bash-${pkgver}.tar.gz"
+   cd "bash-${pkgver}"
+}
+
+build() {
+   ./configure                  \
+        --prefix=/tools         \
+        --build="$BUILD"        \
+        --host="$HOST"          \
+        --disable-nls           \
+        --without-bash-malloc   \
+        --with-gnu-ld
+   make
+}
+
+package() {
+   make DESTDIR="$D" install
+
+   # Delete non-essential stuff like headers and man pages.
+   rm -rf "$D/tools/share" "$D/tools/include"
+}
