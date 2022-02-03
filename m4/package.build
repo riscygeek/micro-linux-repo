@@ -1,0 +1,24 @@
+pkgname=m4
+pkgver=1.4.19
+url="https://www.gnu.org/software/m4"
+description="The GNU macro processor"
+features=()
+
+depends=(bash)
+
+sources=(https://ftp.gnu.org/gnu/m4/m4-${pkgver}.tar.xz)
+
+prepare() {
+   tar -xf "$S/m4-${pkgver}.tar.xz"
+   cd "m4-${pkgver}"
+}
+
+build() {
+   ./configure --prefix=/usr
+
+   make
+}
+
+package() {
+   make DESTDIR="$D" install
+}
