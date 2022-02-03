@@ -28,5 +28,7 @@ build() {
 }
 
 package() {
-   make DESTDIR="$D" install
+   pushd build
+      make DESTDIR="$D" install
+   popd
 }
