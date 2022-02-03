@@ -15,7 +15,7 @@ prepare() {
 }
 
 build() {
-   ./Configure                            \
+   ./config                               \
       --prefix=/usr                       \
       --openssldir=/etc/ssl               \
       --libdir=lib                        \
