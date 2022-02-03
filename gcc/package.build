@@ -20,6 +20,7 @@ build() {
          --prefix=/usr                    \
          --disable-nls                    \
          --disable-multilib               \
+         --disable-bootstrap              \
          --disable-libsanitizer           \
          --disable-libstdcxx-pch          \
          --enable-languages=c,c++
