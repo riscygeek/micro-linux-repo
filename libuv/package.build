@@ -5,6 +5,7 @@ description="Multi-platform support library with a focus on asynchronous I/O"
 features=()
 
 depends=()
+bdepends=(autoconf automake libtool)
 
 sources=(https://dist.libuv.org/dist/v${pkgver}/libuv-v${pkgver}.tar.gz)
 
