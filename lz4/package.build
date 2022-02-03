@@ -2,6 +2,7 @@ pkgname=lz4
 pkgver=1.9.3
 url="http://www.lz4.org/"
 description="Extremely fast compression algorithm"
+features=()
 
 depends=()
 

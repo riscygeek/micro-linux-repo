@@ -2,6 +2,7 @@ pkgname=make-ca
 pkgver=1.7
 url="https://github.com/djlucas/make-ca"
 description="PKI setup script for LFS (and others)"
+features=()
 
 bdepends=()
 depends=(p11-kit)

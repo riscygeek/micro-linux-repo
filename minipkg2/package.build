@@ -2,6 +2,7 @@ pkgname=minipkg2
 pkgver=0.1.4
 url="https://github.com/riscygeek/minipkg2"
 description="Package manager for Micro-Linux"
+features=()
 
 depends=(curl)
 bdepends=(meson)

@@ -2,6 +2,7 @@ pkgname=ncurses
 pkgver=6.2
 url="https://www.gnu.org/software/ncurses"
 description="System V Release 4.0 curses emulation library"
+features=()
 
 bdepends=()
 depends=(pkg-config)
@@ -15,7 +16,6 @@ prepare() {
 
 build() {
    ./configure --prefix=/usr	   \
-      --host="$HOST"             \
       --mandir=/usr/share/man	   \
       --with-shared              \
       --without-debug            \

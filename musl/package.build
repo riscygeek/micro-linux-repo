@@ -2,6 +2,7 @@ pkgname=musl
 pkgver=1.2.2
 url="https://musl.libc.org"
 description="Lightweight C standard library"
+features=(sysroot cross-compile)
 
 bdepends=()
 depends=()

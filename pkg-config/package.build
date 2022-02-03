@@ -2,9 +2,10 @@ pkgname=pkg-config
 pkgver=0.29.2
 url="https://www.freedesktop.org/wiki/Software/pkg-config"
 description="Package compiler and linker metadata toolkit"
+features=()
 
-#bdepends=()
-#depends=()
+bdepends=()
+depends=()
 
 sources=(https://pkg-config.freedesktop.org/releases/pkg-config-${pkgver}.tar.gz)
 
@@ -14,7 +15,7 @@ prepare() {
 }
 
 build() {
-   ./configure --prefix=/usr --with-internal-glib --disable-host-tools --host="$HOST"
+   ./configure --prefix=/usr --with-internal-glib --disable-host-tools
    make
 }
 

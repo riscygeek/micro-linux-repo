@@ -2,6 +2,7 @@ pkgname=busybox
 pkgver=1.35.0
 url="https://busybox.net"
 description="Lightweight coreutils"
+features=()
 
 bdepends=()
 depends=()
@@ -9,18 +10,18 @@ depends=()
 sources=(https://busybox.net/downloads/busybox-${pkgver}.tar.bz2)
 
 bbarch() {
-   case "$HOST" in
-   x86_64-*|i[3456]86-*)
+   case "$(uname -m)" in
+   x86_64|i[3456]86)
       echo x86
       ;;
-   arm-*|armv*-*|aarch64-*)
+   arm|armv*|aarch64)
       echo arm
       ;;
-   riscv*-*)
+   riscv*)
       echo riscv
       ;;
    *)
-      echo "Unsupported architecture: '$HOST'"
+      echo "Unsupported architecture: '$(uname -m)'"
       exit 1
       ;;
    esac
@@ -47,7 +48,7 @@ prepare() {
 }
 
 bbmake() {
-   make ARCH="$(bbarch)" CROSS_COMPILE="${HOST}-" "$@"
+   make ARCH="$(bbarch)" "$@"
 }
 
 build() {

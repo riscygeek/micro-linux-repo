@@ -2,6 +2,7 @@ pkgname=file
 pkgver=5.41
 url="http://www.darwinsys.com/file"
 description="File type identification utility"
+features=()
 
 bdepends=()
 depends=()
@@ -14,7 +15,7 @@ prepare() {
 }
 
 build() {
-   ./configure --prefix=/usr --host="$HOST"
+   ./configure --prefix=/usr
    make
 }
 

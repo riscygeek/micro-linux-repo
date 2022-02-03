@@ -2,6 +2,7 @@ pkgname=readline
 pkgver=8.1
 url="https://tiswww.case.edu/php/chet/readline/rltop.html"
 description="Compression library implementing the deflate compression method found in gzip and PKZIP"
+features=()
 
 depends=(ncurses)
 
@@ -16,7 +17,7 @@ prepare() {
 }
 
 build() {
-   ./configure --prefix=/usr --enable-static --with-curses --host="$HOST"
+   ./configure --prefix=/usr --enable-static --with-curses
    make SHLIB_LIBS="-lncursesw"
 }
 

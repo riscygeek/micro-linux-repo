@@ -2,6 +2,7 @@ pkgname=p11-kit
 pkgver=0.24.0
 url="https://github.com/p11-glue/p11-kit"
 description="Enumerate PKCS #11 (a Cryptographic Token Interface Standard) modules"
+features=()
 
 bdepends=(meson ninja)
 depends=(libtasn1)

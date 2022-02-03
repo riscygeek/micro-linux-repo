@@ -2,6 +2,7 @@ pkgname=python3
 pkgver=3.10.1
 url="https://www.python.org/"
 description="Next generation of the python high-level scripting"
+features=()
 
 bdepends=()
 depends=(bzip2 expat gdbm libffi openssl)
@@ -21,8 +22,6 @@ build() {
    CONFIG_SITE=config.site                \
       ./configure                         \
       --prefix=/usr                       \
-      --build="$(gcc -dumpmachine)"       \
-      --host="$HOST"                      \
       --enable-shared                     \
       --enable-ipv6                       \
       --disable-profiling                 \

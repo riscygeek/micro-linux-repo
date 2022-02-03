@@ -2,6 +2,7 @@ pkgname=expat
 pkgver=2.4.1
 url="https://libexpat.github.io/"
 description="An XML parser library"
+features=()
 
 bdepends=()
 depends=()
@@ -14,7 +15,7 @@ prepare() {
 }
 
 build() {
-   ./configure --prefix=/usr --host="$HOST"
+   ./configure --prefix=/usr
    make
 }
 

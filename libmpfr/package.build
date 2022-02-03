@@ -2,6 +2,7 @@ pkgname=libmpfr
 pkgver=4.1.0
 url="https://www.mpfr.org/"
 description="Multiple-precision floating-point library"
+features=()
 
 depends=(libgmp)
 

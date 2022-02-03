@@ -2,6 +2,7 @@ pkgname=cmake
 pkgver=3.21.2
 url="https://www.cmake.org"
 description="A cross-platform open-source make system"
+features=()
 
 depends=(libuv zstd)
 

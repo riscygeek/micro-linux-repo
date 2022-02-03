@@ -2,6 +2,7 @@ pkgname=libssh2
 pkgver=1.9.0
 url="https://www.libssh2.org/"
 description="A library implementing the SSH2 protocol as defined by Internet Drafts"
+features=()
 
 depends=(openssl zlib)
 

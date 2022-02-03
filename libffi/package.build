@@ -2,6 +2,7 @@ pkgname=libffi
 pkgver=3.4.2
 url="https://sourceware.org/libffi"
 description="Portable foreign function interface library"
+features=()
 
 bdepends=()
 depends=()
@@ -16,7 +17,6 @@ prepare() {
 build() {
    ./configure                   \
       --prefix=/usr              \
-      --host="$HOST"             \
       --with-gcc-arch=native     \
       --disable-exec-static-tramp
    make

@@ -2,6 +2,7 @@ pkgname=libnghttp2
 pkgver=1.44.0
 url="https://nghttp2.org/"
 description="Framing layer of HTTP/2 is implemented as a reusable C library"
+features=()
 
 depends=(libxml2)
 

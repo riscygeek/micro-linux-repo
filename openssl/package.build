@@ -2,6 +2,7 @@ pkgname=openssl
 pkgver=1.1.1l
 url="https://www.openssl.org"
 description="The Open Source toolkit for Secure Sockets Layer and Transport Layer Security"
+features=()
 
 bdepends=()
 depends=(zlib)
@@ -13,49 +14,12 @@ prepare() {
    cd "openssl-${pkgver}"
 }
 
-openssl_config() {
-   case "$HOST" in
-   x86_64-*-linux*)
-      echo "linux-x86_64"
-      ;;
-   i[3456]86-*-linux*)
-      echo "linux-x86"
-      ;;
-   arm*-*-linux*)
-      echo "linux-armv4"
-      ;;
-   aarch64-*-linux*)
-      echo "linux-aarch64"
-      ;;
-   riscv32-*-linux*)
-      echo "linux-generic32"
-      ;;
-   riscv64-*-linux*)
-      echo "linux64-riscv64"
-      ;;
-   *)
-      echo "OpenSSL package does not support '$HOST'"
-      exit 1
-      ;;
-   esac
-}
-
 build() {
-   if [ -n "$HOST" ]; then
-      ./Configure                            \
-         "$(openssl_config)"                 \
-         --cross-compile-prefix="${HOST}-"   \
-         --prefix=/usr                       \
-         --openssldir=/etc/ssl               \
-         --libdir=lib                        \
-         shared zlib-dynamic
-   else
-      ./Configure                            \
-         --prefix=/usr                       \
-         --openssldir=/etc/ssl               \
-         --libdir=lib                        \
-         shared zlib-dynamic
-   fi
+   ./Configure                            \
+      --prefix=/usr                       \
+      --openssldir=/etc/ssl               \
+      --libdir=lib                        \
+      shared zlib-dynamic
 }
 
 package() {

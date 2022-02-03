@@ -2,6 +2,7 @@ pkgname=curl
 pkgver=7.81.0
 url="https://curl.se"
 description="An URL retrieval utility and library."
+features=()
 
 depends=(openssl zlib zstd brotli libnghttp2 libssh2 libidn2)
 rdepends=(make-ca)

@@ -2,6 +2,7 @@ pkgname=make
 pkgver=4.3
 url="https://www.gnu.org/software/make"
 description="Automated build system"
+features=()
 
 bdepends=()
 depends=()
@@ -14,7 +15,7 @@ prepare() {
 }
 
 build() {
-   ./configure --prefix=/usr --host="$HOST" --without-guile
+   ./configure --prefix=/usr --without-guile
    make
 }
 

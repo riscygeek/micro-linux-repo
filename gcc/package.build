@@ -2,6 +2,7 @@ pkgname=gcc
 pkgver=11.2.0
 url="https://www.gnu.org/software/gcc"
 description="A set of programs to assemble and manipulate binary and object files"
+features=()
 
 depends=(binutils libgmp libmpc libmpfr zlib)
 
@@ -14,16 +15,10 @@ prepare() {
 }
 
 build() {
-   echo "HOST: $HOST"
    mkdir -p build
    pushd build
       ../configure                        \
          --prefix=/usr                    \
-         --target="$HOST"                 \
-         --host="$HOST"                   \
-         --program-prefix=                \
-         --with-build-sysroot="$ROOT"     \
-         --with-system-zlib               \
          --disable-nls                    \
          --disable-multilib               \
          --disable-libsanitizer           \

@@ -2,6 +2,7 @@ pkgname=libunistring
 pkgver=0.9.10
 url="https://www.gnu.org/software/libunistring"
 description="Library for manipulating Unicode strings and C strings"
+features=()
 
 depends=()
 

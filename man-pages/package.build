@@ -2,6 +2,7 @@ pkgname=man-pages
 pkgver=5.13
 url="https://www.kernel.org/doc/man-pages/"
 description="Linux man pages"
+features=(sysroot cross-compile)
 
 bdepends=()
 depends=()

@@ -2,6 +2,7 @@ pkgname=post-install-example
 pkgver=1
 url="https://github.com/riscygeek/minipkg2"
 description="A package to test the post_install feature."
+features=()
 
 bdepends=()
 depends=()

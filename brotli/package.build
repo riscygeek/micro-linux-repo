@@ -2,6 +2,7 @@ pkgname=brotli
 pkgver=1.0.9
 url="https://github.com/google/brotli"
 description="Generic-purpose lossless compression algorithm"
+features=()
 
 bdepends=(cmake)
 

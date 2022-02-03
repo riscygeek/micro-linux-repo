@@ -2,6 +2,7 @@ pkgname=bzip2
 pkgver=1.0.8
 url="https://sourceware.org/bzip2/"
 description="A high-quality data compression program"
+features=()
 
 bdepends=()
 depends=()
@@ -21,23 +22,12 @@ prepare() {
 
    # Ensure the man pages are installed into the correct location.
    sed -i "s@(PREFIX)/man@(PREFIX)/share/man@g" Makefile
-
-   if [ -n "$HOST" ]; then
-      CROSS="${HOST}-"
-   fi
-   export CC="${CROSS}gcc"
-   export CXX="${CROSS}g++"
-   export AR="${CROSS}ar"
-   export AS="${CROSS}as"
-   export RANLIB="${CROSS}ranlib"
-   export LD="${CROSS}ld"
-   export STRIP="${CROSS}strip"
 }
 
 build() {
-   make -f Makefile-libbz2_so AR="$AR" CC="$CC" RANLIB="$RANLIB"
+   make -f Makefile-libbz2_so
    make clean
-   make AR="$AR" CC="$CC" RANLIB="$RANLIB"
+   make
 }
 
 package() {

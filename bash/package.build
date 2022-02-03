@@ -2,6 +2,7 @@ pkgname=bash
 pkgver=5.1
 url="https://www.gnu.org/software/bash"
 description="The GNU Bourne Again shell"
+features=()
 
 bdepends=()
 depends=()
@@ -14,7 +15,7 @@ prepare() {
 }
 
 build() {
-   ./configure --prefix=/usr --build="$BUILD" --without-bash-malloc --host="$HOST"
+   ./configure --prefix=/usr --without-bash-malloc
    make
 }
 
