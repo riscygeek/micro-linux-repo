@@ -1,0 +1,32 @@
+pkgname=tmp-libstdcxx
+pkgver=11.2.0
+url="https://www.gnu.org/software/gcc"
+description="C++ library for tmp-gcc-stage1 (temporary)"
+features=()
+
+depends=(tmp-gcc-stage1)
+
+sources=(https://ftp.gnu.org/gnu/gcc/gcc-${pkgver}/gcc-${pkgver}.tar.gz)
+
+prepare() {
+   tar -xf "${S}/gcc-${pkgver}.tar.gz"
+   cd "gcc-${pkgver}"
+}
+
+build() {
+    mkdir -p build
+    pushd build
+
+    ../libstdc++-v3/configure           \
+        CXXFLAGS='-g -O2 -D_GNU_SOURCE' \
+        --prefix=/tools                 \
+        --disable-nls                   \
+        --disable-multilib              \
+        --disable-libstdcxx-pch
+
+    make
+}
+
+package() {
+    make DESTDIR="$D" install
+}
