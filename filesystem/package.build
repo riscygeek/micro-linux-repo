@@ -32,7 +32,7 @@ package() {
 
    # Create the log file.
    touch                   "$D/var/log/lastlog"
-   chmod -vm 644           "$D/var/log/lastlog"
+   chmod -v 644            "$D/var/log/lastlog"
 
    # Copy the system-configuration files.
    cp -prv "$F"/*          "$D/"
