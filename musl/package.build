@@ -4,8 +4,8 @@ url="https://musl.libc.org"
 description="Lightweight C standard library"
 features=(sysroot cross-compile)
 
-bdepends=()
-depends=()
+depends=(libc-headers)
+provides=(libc)
 
 sources=(https://musl.libc.org/releases/musl-${pkgver}.tar.gz)
 
