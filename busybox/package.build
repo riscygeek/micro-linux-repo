@@ -4,28 +4,9 @@ url="https://busybox.net"
 description="Lightweight coreutils"
 features=()
 
-bdepends=()
 depends=()
 
 sources=(https://busybox.net/downloads/busybox-${pkgver}.tar.bz2)
-
-bbarch() {
-   case "$(uname -m)" in
-   x86_64|i[3456]86)
-      echo x86
-      ;;
-   arm|armv*|aarch64)
-      echo arm
-      ;;
-   riscv*)
-      echo riscv
-      ;;
-   *)
-      echo "Unsupported architecture: '$(uname -m)'"
-      exit 1
-      ;;
-   esac
-}
 
 prepare() {
    tar -xf "${S}/busybox-${pkgver}.tar.bz2"
@@ -33,10 +14,10 @@ prepare() {
 
    make distclean
 
-   if [ -f "$ROOT/etc/minipkg2/busybox.config" ]; then
-      cp "$ROOT/etc/minipkg2/busybox.config" .config
+   if [ -f "/etc/minipkg2/busybox.config" ]; then
+      cp "/etc/minipkg2/busybox.config" .config
    else
-      make ARCH="$(bbarch)" defconfig
+      make defconfig
    fi
 
    sed -i 's/\(CONFIG_\)\(.*\)\(INETD\)\(.*\)=y/# \1\2\3\4 is not set/g' .config
@@ -47,14 +28,10 @@ prepare() {
    sed -i 's/\(CONFIG_TCPSVD\)=y/# \1 is not set/' .config
 }
 
-bbmake() {
-   pmake ARCH="$(bbarch)" "$@"
-}
-
 build() {
-   bbmake
+   pmake
 }
 
 package() {
-   bbmake CONFIG_PREFIX="$D" install
+   make CONFIG_PREFIX="$D" install
 }
