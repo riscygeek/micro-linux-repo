@@ -19,7 +19,7 @@ build() {
 }
 
 package() {
-   install -vDm644 "sys-cdefs.h" "$D/usr/include/sys/cdefs.h"
-   install -vDm644 "sys-queue.h" "$D/usr/include/sys/queue.h"
-   install -vDm644 "sys-tree.h"  "$D/usr/include/sys/tree.h"
+   install -vDm644 "$S/sys-cdefs.h" "$D/usr/include/sys/cdefs.h"
+   install -vDm644 "$S/sys-queue.h" "$D/usr/include/sys/queue.h"
+   install -vDm644 "$S/sys-tree.h"  "$D/usr/include/sys/tree.h"
 }
