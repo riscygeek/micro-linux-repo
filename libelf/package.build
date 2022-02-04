@@ -28,7 +28,7 @@ build() {
       --enable-libdebuginfod=dummy  \
       --disable-nls
 
-   pmake
+   pmake -C libelf
 }
 
 package() {
