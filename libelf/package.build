@@ -11,6 +11,14 @@ sources=(https://sourceware.org/ftp/elfutils/${pkgver}/elfutils-${pkgver}.tar.bz
 prepare() {
    tar -xf "$S/elfutils-${pkgver}.tar.bz2"
    cd "elfutils-${pkgver}"
+
+   cp "$F/error.h" "src/"
+   cp "$F/error.h" "lib/"
+
+   # Patches from AlpineLinux
+   patch -Np1 < "$F/musl-macros.patch"
+   patch -Np1 < "$F/musl-strndupa.patch"
+   patch -Np1 < "$F/musl-asm-ptrace-h.patch"
 }
 
 build() {
