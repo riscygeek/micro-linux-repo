@@ -10,7 +10,7 @@ sources=(https://ftp.gnu.org/gnu/libunistring/libunistring-${pkgver}.tar.xz)
 
 prepare() {
    tar -xf "$S/libunistring-${pkgver}.tar.xz"
-   cd "libunistring-${pkgver}
+   cd "libunistring-${pkgver}"
 }
 
 build() {
