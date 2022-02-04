@@ -1,0 +1,32 @@
+pkgname=gdb
+pkgver=10.2
+url="http://www.gnu.org/software/gdb"
+description="GNU debugger"
+features=()
+
+depends=(python3 ncurses expat xz libmpfr readline libelf)
+
+sources=(https://ftp.gnu.org/gnu/gdb/gdb-${pkgver}.tar.xz)
+
+prepare() {
+   tar -xf "$S/gdb-${pkgver}.tar.xz"
+   cd "gdb-${pkgver}"
+}
+
+build() {
+   mkdir build
+   cd build
+
+   ../configure               \
+      --prefix=/usr           \
+      --disable-bootstrap     \
+      --with-system-readline  \
+      --with-system-zlib      \
+      --with-python=/usr/bin/python3
+
+   pmake
+}
+
+package() {
+   make -C gdb DESTDIR="$D" install
+}
