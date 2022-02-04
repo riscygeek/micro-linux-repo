@@ -19,9 +19,7 @@
  extern bool arlib_deterministic_output;
 --- a/src/elfcompress.c.orig	2016-04-02 12:51:26.903848894 +0200
 +++ b/src/elfcompress.c	2016-04-02 12:55:15.076996338 +0200
-@@ -35,6 +35,14 @@
- #include <gelf.h>
- #include "system.h"
+@@ -37,6 +37,14 @@
  #include "libeu.h"
  #include "printversion.h"
  
