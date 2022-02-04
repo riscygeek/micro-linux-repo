@@ -4,7 +4,7 @@ url=""
 description=""
 features=()
 
-depends=(musl)
+depends=(musl bsd-compat-headers)
 bdepends=(autoconf automake libtool)
 
 sources=(https://libbsd.freedesktop.org/releases/libbsd-${pkgver}.tar.xz)

@@ -1,0 +1,25 @@
+pkgname=bsd-compat-headers
+pkgver=1
+url="https://git.alpinelinux.org/aports/tree/main/libc-dev?h=3.3-stable"
+description="Compatibility headers for BSD programs"
+features=()
+
+sources=(                                                               \
+   https://git.alpinelinux.org/aports/plain/main/libc-dev/sys-cdefs.h   \
+   https://git.alpinelinux.org/aports/plain/main/libc-dev/sys-queue.h   \
+   https://git.alpinelinux.org/aports/plain/main/libc-dev/sys-tree.h    \
+)
+
+prepare() {
+   true
+}
+
+build() {
+   true
+}
+
+package() {
+   install -vDm644 "sys-cdefs.h" "$D/usr/include/sys/cdefs.h"
+   install -vDm644 "sys-queue.h" "$D/usr/include/sys/queue.h"
+   install -vDm644 "sys-tree.h"  "$D/usr/include/sys/tree.h"
+}
