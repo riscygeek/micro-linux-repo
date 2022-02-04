@@ -11,6 +11,13 @@ sources=(https://ftp.gnu.org/gnu/gcc/gcc-${pkgver}/gcc-${pkgver}.tar.gz)
 prepare() {
    tar -xf "${S}/gcc-${pkgver}.tar.gz"
    cd "gcc-${pkgver}"
+
+   # Change the library path from /usr/lib64 to /usr/lib
+   case "$(uname -m)" in
+   x86_64)
+      sed -e '/m64=/s/lib64/lib/ -i.orig gcc/config/i386/t-linux64
+      ;;
+   esac
 }
 
 build() {
@@ -18,6 +25,7 @@ build() {
    pushd build
       ../configure                        \
          --prefix=/usr                    \
+         --libdir=lib                     \
          --disable-nls                    \
          --disable-multilib               \
          --disable-bootstrap              \
