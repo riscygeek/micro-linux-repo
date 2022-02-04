@@ -5,7 +5,7 @@
 
 # Packages
 - [x] autoconf
-- [ ] automake
+- [x] automake
 - [ ] libtool
 - [ ] flex
 - [ ] bison
