@@ -1,0 +1,32 @@
+pkgname=gettext
+pkgver=0.21
+url="https://www.gnu.org/software/gettext"
+description="GNU internationalization library"
+features=()
+
+depends=(libunistring)
+
+sources=(https://ftp.gnu.org/gnu/gettext/gettext-${pkgver}.tar.xz)
+
+prepare() {
+   tar -xf "$S/gettext-${pkgver}.tar.xz"
+   cd "gettext-${pkgver}"
+}
+
+build() {
+   ./configure          \
+      --prefix=/usr     \
+      --enable-static   \
+      --enable-shared   \
+      --disable-acl     \
+      --disable-openmp  \
+      --without-emacs   \
+      --without-git
+
+   pmake
+}
+
+package() {
+   make DESTDIR="$D" install
+   chmod -v 0755 "$D/usr/lib/preloadable_libintl.so"
+}
