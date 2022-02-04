@@ -4,7 +4,7 @@ url="https://git-scm.com/"
 description="Fast distributed version control system"
 features=()
 
-depends=(curl perl expat openssl zlib python3)
+depends=(curl perl expat openssl zlib python3 gettext)
 
 sources=(https://www.kernel.org/pub/software/scm/git/git-${pkgver}.tar.xz)
 
