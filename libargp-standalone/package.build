@@ -30,7 +30,7 @@ build() {
 
 package() {
    install -vDm644 argp.h "$D/usr/include/argp.h"
-   isntall -vDm755 libargp.a "$D/usr/lib/libargp.a"
+   install -vDm755 libargp.a "$D/usr/lib/libargp.a"
 }
 
 
