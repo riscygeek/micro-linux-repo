@@ -27,6 +27,7 @@ build() {
    rm -rf p11-build
    meson setup p11-build               \
       --prefix=/usr                    \
+      --libdir=lib                     \
       --buildtype=release              \
       -Dtrust_paths=/etc/pki/anchors
 
