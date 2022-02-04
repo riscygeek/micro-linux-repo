@@ -25,7 +25,6 @@ build() {
    pushd build
       ../configure                        \
          --prefix=/usr                    \
-         --libdir=lib                     \
          --disable-nls                    \
          --disable-multilib               \
          --disable-bootstrap              \
