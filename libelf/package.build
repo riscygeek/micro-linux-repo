@@ -4,7 +4,7 @@ url="https://sourceware.org/elfutils"
 description="Handle ELF object files and DWARF debugging information (libraries)"
 features=()
 
-depends=(zlib zstd libargp-standalone)
+depends=(zlib zstd libargp-standalone libfts)
 
 sources=(https://sourceware.org/ftp/elfutils/${pkgver}/elfutils-${pkgver}.tar.bz2)
 

@@ -1,0 +1,27 @@
+pkgname=libfts
+pkgver=1.2.7
+url="https://github.com/void-linux/musl-fts/releases/tag/v1.2.7"
+description="Provides the fts(3) functions, which are missing in musl libc"
+features=()
+
+bdepends=(automake autoconf libtool)
+
+sources=(https://github.com/void-linux/musl-fts/archive/refs/tags/v${pkgver}.tar.gz)
+
+prepare() {
+   tar -xf "$S/v${pkgver}.tar.gz"
+   cd "musl-fts-${pkgver}"
+}
+
+build() {
+   ./bootstrap.sh
+
+   ./configure --prefix=/usr
+
+   pmake
+}
+
+package() {
+   make DESTDIR="$D" install
+   install vDm644 musl-fts.pc "$D/usr/lib/pkgconfig/musl-fts.pc"
+}
