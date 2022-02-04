@@ -36,5 +36,5 @@ build() {
 
 package() {
    meson install -C p11-build --destdir="$D"
-   ln -sf /usr/libexec/p11-kit/trust-extract-compat "$D/usr/bin/update-ca-certificated"
+   ln -sf /usr/libexec/p11-kit/trust-extract-compat "$D/usr/bin/update-ca-certificates"
 }
