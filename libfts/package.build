@@ -23,5 +23,5 @@ build() {
 
 package() {
    make DESTDIR="$D" install
-   install vDm644 musl-fts.pc "$D/usr/lib/pkgconfig/musl-fts.pc"
+   install -vDm644 musl-fts.pc "$D/usr/lib/pkgconfig/musl-fts.pc"
 }
