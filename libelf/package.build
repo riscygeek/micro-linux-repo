@@ -21,6 +21,7 @@ prepare() {
 
 build() {
    LIBS="-largp -lfts"              \
+   CFLAGS="$CFLAGS -Wno-error"      \
    ./configure                      \
       --prefix=/usr                 \
       --disable-debuginfod          \
