@@ -1,5 +1,5 @@
 pkgname=gdb
-pkgver=10.2
+pkgver=11.2
 url="http://www.gnu.org/software/gdb"
 description="GNU debugger"
 features=()
