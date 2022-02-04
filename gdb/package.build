@@ -11,6 +11,8 @@ sources=(https://ftp.gnu.org/gnu/gdb/gdb-${pkgver}.tar.xz)
 prepare() {
    tar -xf "$S/gdb-${pkgver}.tar.xz"
    cd "gdb-${pkgver}"
+
+   patch -p1 < "$F/gdbserver-fix-intl.patch"
 }
 
 build() {
@@ -22,6 +24,7 @@ build() {
    ../configure               \
       --prefix=/usr           \
       --disable-bootstrap     \
+      --disable-silent-rules  \
       --with-system-readline  \
       --with-system-zlib      \
       --with-python=/usr/bin/python3
