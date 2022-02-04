@@ -21,5 +21,5 @@ build() {
 }
 
 package() {
-   meson install -C build --destdir="$ROOT"
+   meson install -C build --destdir="$D"
 }
