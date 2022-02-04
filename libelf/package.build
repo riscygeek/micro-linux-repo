@@ -33,6 +33,6 @@ build() {
 
 package() {
    make -C libelf DESTDIR="$D" install
-   install -vm644 config/libelf.pc "$D/usr/lib/pkgconfig/libelf.pc"
+   install -vDm644 config/libelf.pc "$D/usr/lib/pkgconfig/libelf.pc"
 }
 
