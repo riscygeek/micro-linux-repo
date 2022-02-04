@@ -16,7 +16,7 @@ prepare() {
 build() {
    ./configure          \
       --prefix=/usr     \
-      --enable-static   \
+      --disable-static  \
       --enable-shared   \
       --disable-acl     \
       --disable-openmp  \
