@@ -1,0 +1,24 @@
+pkgname=libtool
+pkgver=2.4.6
+url="https://www.gnu.org/software/libtool"
+description="A generic library support script"
+features=()
+
+depends=()
+
+sources=(https://ftp.gnu.org/gnu/libtool/libtool-${pkgver}.tar.xz)
+
+prepare() {
+   tar -xf "$S/libtool-${pkgver}.tar.xz"
+   cd "libtool-${pkgver}"
+}
+
+build() {
+   ./configure --prefix=/usr
+
+   make
+}
+
+package() {
+   make DESTDIR="$D" install
+}

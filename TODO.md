@@ -6,7 +6,7 @@
 # Packages
 - [x] autoconf
 - [x] automake
-- [ ] libtool
+- [x] libtool
 - [ ] flex
 - [ ] bison
 - [ ] fakeroot
