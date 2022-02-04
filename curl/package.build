@@ -4,7 +4,7 @@ url="https://curl.se"
 description="An URL retrieval utility and library."
 features=()
 
-depends=(openssl zlib zstd brotli libnghttp2 libssh2 libidn2)
+depends=(openssl zlib zstd libnghttp2 libssh2 libidn2)
 rdepends=(make-ca)
 
 prepare() {
@@ -43,9 +43,9 @@ build() {
       --with-nghttp2                   \
       --with-zlib                      \
       --with-zstd                      \
-      --with-brotli                    \
       --with-libssh2                   \
       --with-libidn2                   \
+      --without-brotli                 \
       --without-ngtcp2                 \
       --without-hyper                  \
       --without-ngtcp2                 \
