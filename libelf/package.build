@@ -1,0 +1,30 @@
+pkgname=libelf
+pkgver=0.185
+url="https://sourceware.org/elfutils"
+description="Handle ELF object files and DWARF debugging information (libraries)"
+features=()
+
+depends=(zlib zstd)
+
+sources=(https://sourceware.org/ftp/elfutils/${pkgver}/elfutils-${pkgver}.tar.bz2)
+
+prepare() {
+   tar -xf "$S/elfutils-${pkgver}.tar.bz2"
+   cd "elfutils-${pkgver}"
+}
+
+build() {
+   ./configure                      \
+      --prefix=/usr                 \
+      --disable-debuginfod          \
+      --enable-libdebuginfod=dummy  \
+      --disable-nls
+
+   pmake
+}
+
+package() {
+   make -C libelf DESTDIR="$D" install
+   install -vm644 config/libelf.pc "$D/usr/lib/pkgconfig/libelf.pc"
+}
+
