@@ -21,7 +21,7 @@ build() {
         --disable-nls   \
         --without-guile \
         --with-gnu-ld
-   make
+   pmake
 }
 
 package() {

@@ -24,7 +24,7 @@ build() {
         --disable-multilib              \
         --disable-libstdcxx-pch
 
-    make
+    pmake
 }
 
 package() {

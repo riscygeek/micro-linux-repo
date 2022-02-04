@@ -27,7 +27,7 @@ build() {
          --disable-libsanitizer             \
          --disable-libstdcxx                \
          --enable-languages=c,c++
-      make -j$(nproc)
+      pmake
    popd
 }
 

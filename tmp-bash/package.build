@@ -22,7 +22,7 @@ build() {
         --disable-nls           \
         --without-bash-malloc   \
         --with-gnu-ld
-   make
+   pmake
 }
 
 package() {

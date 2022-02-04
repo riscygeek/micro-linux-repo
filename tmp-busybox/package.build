@@ -41,7 +41,7 @@ bbmake() {
 }
 
 build() {
-   bbmake
+   bbmake -j "$JOBS"
 }
 
 package() {

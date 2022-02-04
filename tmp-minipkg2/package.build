@@ -14,7 +14,7 @@ prepare() {
 }
 
 build() {
-   make CC="${HOST}-gcc" HAS_LIBCURL=0 prefix=/tools all
+   pmake CC="${HOST}-gcc" HAS_LIBCURL=0 prefix=/tools all
 }
 
 package() {
