@@ -6,7 +6,11 @@ features=()
 
 depends=(libuv zstd)
 
-sources=(https://cmake.org/files/v${pkgver}/cmake-${pkgver}.tar.gz)
+_dlver() {
+   awk -F. '{printf "%s.%s\n", $1, $2}' <<<"$pkgver"
+}
+
+sources=(https://cmake.org/files/v$(_dlver)/cmake-${pkgver}.tar.gz)
 
 prepare() {
    tar -xf "$S/cmake-${pkgver}.tar.gz"
