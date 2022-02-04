@@ -24,6 +24,7 @@ EOF
 }
 
 build() {
+   rm -rf p11-build
    meson setup p11-build               \
       --prefix=/usr                    \
       --buildtype=release              \
@@ -33,6 +34,6 @@ build() {
 }
 
 package() {
-   meson -C p11-build install --destdir="$D"
+   meson install -C p11-build --destdir="$D"
    ln -sf /usr/libexec/p11-kit/trust-extract-compat "$D/usr/bin/update-ca-certificated"
 }
