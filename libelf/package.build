@@ -14,7 +14,7 @@ prepare() {
 }
 
 build() {
-   LIBS="-largp"                    \
+   LIBS="-largp -lfts"              \
    ./configure                      \
       --prefix=/usr                 \
       --disable-debuginfod          \
