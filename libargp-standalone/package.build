@@ -1,0 +1,36 @@
+# Thanks to Alpine Linux (https://git.alpinelinux.org/aports/tree/main/argp-standalone?h=master)
+pkgname=libargp-standalone
+pkgver=1.3
+url="http://www.lysator.liu.se/~nisse/misc/"
+description="Hierarchial argument parsing library broken out from glibc"
+features=()
+
+depends=()
+bdepends=(autoconf automake libtool)
+provides=(libargp)
+
+sources=(https://www.lysator.liu.se/~nisse/misc/argp-standalone-${pkgver}.tar.gz)
+
+prepare() {
+   tar -xf "$S/argp-standalone-${pkgver}.tar.gz"
+   cd "argp-standalone-${pkgver}"
+
+   # Apply patches. (Thanks to AlpineLinux)
+   patch -Np1 < "$F/gnu89-inline.patch"
+   patch -Np1 < "$F/001-throw-in-funcdef.patch"
+
+   autoreconf -vif
+}
+
+build() {
+   ./configure --prefix=/usr
+
+   pmake
+}
+
+package() {
+   install -vDm644 argp.h "$D/usr/include/argp.h"
+   isntall -vDm755 libargp.a "$D/usr/lib/libargp.a"
+}
+
+
