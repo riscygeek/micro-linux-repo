@@ -16,9 +16,9 @@ prepare() {
    cp "$F/error.h" "lib/"
 
    # Patches from AlpineLinux
-   patch -Np1 < "$F/musl-macros.patch"
-   patch -Np1 < "$F/musl-strndupa.patch"
-   patch -Np1 < "$F/musl-asm-ptrace-h.patch"
+   patch -p1 < "$F/musl-macros.patch"
+   patch -p1 < "$F/musl-strndupa.patch"
+   patch -p1 < "$F/musl-asm-ptrace-h.patch"
 }
 
 build() {
