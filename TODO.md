@@ -4,7 +4,7 @@
 - [ ] Rename readline to libreadline
 
 # Packages
-- [ ] autoconf
+- [x] autoconf
 - [ ] automake
 - [ ] libtool
 - [ ] flex
