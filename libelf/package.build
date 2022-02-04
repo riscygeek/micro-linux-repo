@@ -17,7 +17,7 @@ prepare() {
 
    # Patches from AlpineLinux
    patch -p1 < "$F/musl-macros.patch"
-   patch -p1 < "$F/musl-strndupa.patch"
+   #patch -p1 < "$F/musl-strndupa.patch"
    patch -p1 < "$F/musl-asm-ptrace-h.patch"
 }
 
