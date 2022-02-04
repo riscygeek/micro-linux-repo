@@ -4,7 +4,7 @@ url="http://www.gnu.org/software/gdb"
 description="GNU debugger"
 features=()
 
-depends=(python3 ncurses expat xz libmpfr readline libelf gettext)
+depends=(python3 ncurses expat xz libmpfr readline libelf gettext texinfo)
 
 sources=(https://ftp.gnu.org/gnu/gdb/gdb-${pkgver}.tar.xz)
 
