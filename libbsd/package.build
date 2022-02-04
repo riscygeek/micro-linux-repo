@@ -1,0 +1,25 @@
+pkgname=libbsd
+pkgver=0.11.4
+url=""
+description=""
+features=()
+
+depends=(musl)
+bdepends=(autoconf automake libtool)
+
+sources=(https://libbsd.freedesktop.org/releases/libbsd-${pkgver}.tar.xz)
+
+prepare() {
+   tar -xf "$S/libbsd-${pkgver}.tar.xz"
+   cd "libbsd-${pkgver}"
+}
+
+build() {
+   ./autogen
+   ./configure --prefix=/usr
+   pmake
+}
+
+package() {
+   make DESTDIR="$D" install
+}
