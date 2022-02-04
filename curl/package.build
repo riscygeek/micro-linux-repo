@@ -7,8 +7,10 @@ features=()
 depends=(openssl zlib zstd libnghttp2 libssh2 libidn2)
 rdepends=(make-ca)
 
+sources=(https://curl.se/download/curl-${pkgver}.tar.xz)
+
 prepare() {
-   tar -xf "$S/curl-${pkgver}.tar.gz"
+   tar -xf "$S/curl-${pkgver}.tar.xz"
    cd "curl-${pkgver}"
 }
 
