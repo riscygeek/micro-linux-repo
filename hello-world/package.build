@@ -2,7 +2,7 @@ pkgname=hello-world
 pkgver=1.0
 url="https://github.com/riscygeek/hello-world"
 description="A small test package"
-features=()
+features=(sysroot)
 
 bdepends=()
 depends=()
@@ -18,7 +18,7 @@ prepare() {
 }
 
 build() {
-   make
+   pmake
 }
 
 package() {
