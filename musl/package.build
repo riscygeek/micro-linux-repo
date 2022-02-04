@@ -26,4 +26,5 @@ build() {
 package() {
    make DESTDIR="$D" install
    ln -sfv "../lib/libc.so" "$D/usr/bin/ldd"
+   rm "$D/usr/include/libintl.h"
 }
