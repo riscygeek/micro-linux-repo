@@ -48,7 +48,7 @@ prepare() {
 }
 
 bbmake() {
-   make ARCH="$(bbarch)" "$@"
+   pmake ARCH="$(bbarch)" "$@"
 }
 
 build() {

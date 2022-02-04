@@ -21,7 +21,7 @@ build() {
       --with-history    \
       --with-python=/usr/bin/python3
 
-   make
+   pmake
 }
 
 package() {

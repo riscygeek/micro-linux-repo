@@ -29,7 +29,7 @@ build() {
       --with-system-ffi                   \
       --with-ensurepip=yes
 
-   make
+   pmake
 }
 
 package() {

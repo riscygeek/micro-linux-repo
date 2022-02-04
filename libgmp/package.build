@@ -20,7 +20,7 @@ build() {
       --enable-static   \
       --enable-shared
 
-   make
+   pmake
 }
 
 package() {

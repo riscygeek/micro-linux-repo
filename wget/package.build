@@ -16,7 +16,7 @@ prepare() {
 
 build() {
    ./configure --prefix=/usr --sysconfdir=/etc --with-openssl
-   make
+   pmake
 }
 
 package() {

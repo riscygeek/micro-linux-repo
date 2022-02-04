@@ -33,7 +33,7 @@ build() {
       -Duseshrplib                                 \
       -Dusethreads
 
-   make
+   pmake
 }
 
 package() {

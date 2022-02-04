@@ -19,7 +19,7 @@ build() {
       --prefix=/usr              \
       --with-gcc-arch=native     \
       --disable-exec-static-tramp
-   make
+   pmake
 }
 
 package() {

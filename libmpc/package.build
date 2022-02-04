@@ -18,7 +18,7 @@ build() {
       --prefix=/usr     \
       --enable-static   \
       --enable-shared
-   make
+   pmake
 }
 
 package() {

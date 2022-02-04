@@ -14,7 +14,7 @@ prepare() {
 }
 
 build() {
-   make
+   pmake
 }
 
 package() {

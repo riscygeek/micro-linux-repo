@@ -16,7 +16,7 @@ prepare() {
 
 build() {
    ./configure --prefix=/usr --without-guile
-   make
+   pmake
 }
 
 package() {

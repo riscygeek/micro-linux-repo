@@ -20,7 +20,7 @@ build() {
    else
       ./configure --prefix=/usr
    fi
-   make
+   pmake
 }
 
 package() {

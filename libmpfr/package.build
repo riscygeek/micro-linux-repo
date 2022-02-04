@@ -20,7 +20,7 @@ build() {
       --enable-shared   \
       --enable-thread-safe
 
-   make
+   pmake
 }
 
 package() {

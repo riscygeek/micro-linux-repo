@@ -23,7 +23,7 @@ build() {
       --enable-pc-files          \
       --enable-widec
 
-   make
+   pmake
 }
 
 package() {

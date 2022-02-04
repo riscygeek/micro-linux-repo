@@ -54,7 +54,7 @@ build() {
       --with-openssl                   \
       --with-ca-path=/etc/ssl/certs
 
-   make
+   pmake
 }
 
 package() {

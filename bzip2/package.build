@@ -25,9 +25,9 @@ prepare() {
 }
 
 build() {
-   make -f Makefile-libbz2_so
+   pmake -f Makefile-libbz2_so
    make clean
-   make
+   pmake
 }
 
 package() {

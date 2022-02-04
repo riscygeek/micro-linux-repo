@@ -20,7 +20,7 @@ build() {
       --disable-nls                 \
       --disable-multilib            \
       --disable-werror
-   make
+   pmake
 }
 
 package() {

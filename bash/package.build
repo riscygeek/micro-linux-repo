@@ -16,7 +16,7 @@ prepare() {
 
 build() {
    ./configure --prefix=/usr --without-bash-malloc
-   make
+   pmake
 }
 
 package() {

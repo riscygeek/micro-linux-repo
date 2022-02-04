@@ -20,7 +20,7 @@ build() {
       --enable-shared   \
       --enable-lib-only
 
-   make
+   pmake
 }
 
 package() {

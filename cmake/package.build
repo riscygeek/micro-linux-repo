@@ -27,7 +27,7 @@ build() {
       --no-system-jsoncpp  \
       --no-system-librhash
 
-   make
+   pmake
 }
 
 package() {

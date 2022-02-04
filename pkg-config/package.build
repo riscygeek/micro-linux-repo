@@ -16,7 +16,7 @@ prepare() {
 
 build() {
    ./configure --prefix=/usr --with-internal-glib --disable-host-tools
-   make
+   pmake
 }
 
 package() {

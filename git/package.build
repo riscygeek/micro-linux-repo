@@ -19,7 +19,7 @@ build() {
       --with-gitconfig=/etc/gitconfig  \
       --with-python3=/usr/bin/python3  \
       --without-tcltk
-   make
+   pmake
 }
 
 package() {

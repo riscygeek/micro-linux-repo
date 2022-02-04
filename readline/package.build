@@ -18,7 +18,7 @@ prepare() {
 
 build() {
    ./configure --prefix=/usr --enable-static --with-curses
-   make SHLIB_LIBS="-lncursesw"
+   pmake SHLIB_LIBS="-lncursesw"
 }
 
 package() {
