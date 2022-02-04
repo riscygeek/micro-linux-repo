@@ -1,0 +1,25 @@
+pkgname=libobstack
+pkgver=1.2.2
+url="https://github.com/void-linux/musl-obstack"
+description="Standalone library to implement GNU libc's obstack"
+features=()
+
+depends=()
+bdepends=(autoconf automake libtool)
+
+source=(https://github.com/void-linux/musl-obstack/archive/refs/tags/v${pkgver}.tar.gz)
+
+prepare() {
+   tar -xf "$S/v${pkgver}.tar.gz"
+   cd "musl-obstack-${pkgver}"
+}
+
+build() {
+   ./bootstrap.sh
+   ./configure --prefix=/usr
+   pmake
+}
+
+package() {
+   make DESTDIR="$D" install
+}
