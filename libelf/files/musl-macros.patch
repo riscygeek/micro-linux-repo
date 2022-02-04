@@ -22,6 +22,8 @@
 @@ -35,6 +35,14 @@
  #include <gelf.h>
  #include "system.h"
+ #include "libeu.h"
+ #include "printversion.h"
  
 +#if !defined(FNM_EXTMATCH)
 +# define FNM_EXTMATCH 0
