@@ -34,8 +34,8 @@
 +#endif
 +
  /* Name and version of program.  */
- static void print_version (FILE *stream, struct argp_state *state);
  ARGP_PROGRAM_VERSION_HOOK_DEF = print_version;
+ 
 diff --git a/lib/libeu.h b/lib/libeu.h
 index 69fe3d7..e5c99b8 100644
 --- a/lib/libeu.h
