@@ -24,16 +24,15 @@ EOF
 }
 
 build() {
-   mkdir p11-build
-   cd p11-build
-
-   meson --prefix=/usr --buildtype=release \
+   meson setup p11-build               \
+      --prefix=/usr                    \
+      --buildtype=release              \
       -Dtrust_paths=/etc/pki/anchors
 
-   ninja
+   meson compile -C p11-build
 }
 
 package() {
-   ninja DESTDIR="$D" install
+   meson -C p11-build install --destdir="$D"
    ln -sf /usr/libexec/p11-kit/trust-extract-compat "$D/usr/bin/update-ca-certificated"
 }
