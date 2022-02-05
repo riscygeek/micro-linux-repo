@@ -20,7 +20,7 @@ build() {
 
 package() {
    make DESTDIR="$D" install
-   install -dm755 /etc/ssl/local
+   install -dm755 "$D/etc/ssl/local"
 }
 
 post_install() {
