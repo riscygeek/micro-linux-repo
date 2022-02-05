@@ -7,6 +7,9 @@ features=()
 depends=(curl git)
 bdepends=(meson)
 
+provides=(minipkg2)
+conflicts=(minipkg2)
+
 sources=(git://github.com/riscygeek/minipkg2.git)
 
 prepare() {
