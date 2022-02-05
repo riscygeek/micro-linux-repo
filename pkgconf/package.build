@@ -1,0 +1,29 @@
+pkgname=pkgconf
+pkgver=1.8.0
+url="https://github.com/pkgconf/pkgconf"
+description="Package compiler and linker metadata toolkit"
+features=()
+
+depends=()
+
+provides=(pkg-config)
+conflicts=(pkg-config)
+
+sources=(https://distfiles.dereferenced.org/pkgconf/pkgconf-${pkgver}.tar.xz)
+
+prepare() {
+   tar -xf "$S/pkgconf-${pkgver}.tar.xz"
+   cd "pkgconf-${pkgver}"
+}
+
+build() {
+   ./configure       \
+      --prefix=/usr  \
+      --${config[build.static-libs]:-enable}-static
+
+   pmake
+}
+
+package() {
+   make DESTDIR="$D" install
+}
