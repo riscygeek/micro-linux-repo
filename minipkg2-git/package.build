@@ -1,0 +1,24 @@
+pkgname=minipkg2-git
+pkgver=9999
+url="https://github.com/riscygeek/minipkg2"
+description="Package manager for Micro-Linux"
+features=()
+
+depends=(curl git)
+bdepends=(meson)
+
+sources=(git://github.com/riscygeek/minipkg2.git)
+
+prepare() {
+   cp -rv "$S/minipkg2" .
+   cd "minipkg2"
+}
+
+build() {
+   meson setup build --prefix=/usr --libdir=lib
+   meson compile -C build
+}
+
+package() {
+   meson install -C build --destdir="$D"
+}
