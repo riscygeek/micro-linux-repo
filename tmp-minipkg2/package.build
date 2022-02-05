@@ -1,5 +1,5 @@
 pkgname=tmp-minipkg2
-pkgver=0.2.7.3
+pkgver=0.2.8
 url="https://github.com/riscygeek/minipkg2"
 description="Package manager for Micro-Linux"
 features=(sysroot cross-compile)
