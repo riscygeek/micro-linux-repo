@@ -24,4 +24,9 @@ build() {
 
 package() {
    make MANSUFFIX=ssl DESTDIR="$D" install
+
+   if [[ ${config[build.static-libs]} = disable ]]; then
+      cd "$D"
+      find . -name '*.a' -print -delete
+   fi
 }

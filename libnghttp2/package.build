@@ -16,9 +16,9 @@ prepare() {
 build() {
    ./configure          \
       --prefix=/usr     \
-      --enable-static   \
       --enable-shared   \
-      --enable-lib-only
+      --enable-lib-only \
+      --${config[build.static-libs]:-enable}-static
 
    pmake
 }

@@ -14,10 +14,10 @@ prepare() {
 }
 
 build() {
-   ./configure          \
-      --prefix=/usr     \
-      --enable-static   \
-      --enable-libgdbm-compat
+   ./configure                \
+      --prefix=/usr           \
+      --enable-libgdbm-compat \
+      --${config[build.static-libs]:-enable}-static
    pmake
 }
 

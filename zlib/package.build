@@ -21,4 +21,8 @@ build() {
 
 package() {
    make DESTDIR="$D" install
+
+   if [[ ${config[build.static-libs]} = disable ]]; then
+      rm -v "$D/usr/lib/libz.a"
+   fi
 }

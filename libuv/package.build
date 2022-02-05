@@ -18,8 +18,8 @@ build() {
    sh autogen.sh
    ./configure          \
       --prefix=/usr     \
-      --enable-static   \
-      --enable-shared
+      --enable-shared   \
+      --${config[build.static-libs]:-enable}-static
    pmake
 }
 

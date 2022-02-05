@@ -14,12 +14,12 @@ prepare() {
 }
 
 build() {
-   ./configure          \
-      --prefix=/usr     \
-      --enable-static   \
-      --enable-shared   \
-      --with-history    \
-      --with-python=/usr/bin/python3
+   ./configure                         \
+      --prefix=/usr                    \
+      --enable-shared                  \
+      --with-history                   \
+      --with-python=/usr/bin/python3   \
+      --${config[build.static-libs]:-enable}-static
 
    pmake
 }

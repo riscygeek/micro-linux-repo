@@ -15,10 +15,11 @@ prepare() {
 }
 
 build() {
-   ./configure                   \
-      --prefix=/usr              \
-      --with-gcc-arch=native     \
-      --disable-exec-static-tramp
+   ./configure                      \
+      --prefix=/usr                 \
+      --with-gcc-arch=native        \
+      --disable-exec-static-tramp   \
+      --${config[build.static-libs]:-enable}-static
    pmake
 }
 

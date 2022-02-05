@@ -26,7 +26,8 @@ build() {
       --prefix=/usr                 \
       --disable-debuginfod          \
       --enable-libdebuginfod=dummy  \
-      --disable-nls
+      --disable-nls                 \
+      --${config[build.static-libs]:-enable}-static
 
    pmake -C libelf
 }

@@ -17,7 +17,10 @@ prepare() {
 }
 
 build() {
-   ./configure --prefix=/usr --enable-static --with-curses
+   ./configure          \
+      --prefix=/usr     \
+      --with-curses     \
+      --${config[build.static-libs]:-enable}-static
    pmake SHLIB_LIBS="-lncursesw"
 }
 

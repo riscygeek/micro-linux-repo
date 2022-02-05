@@ -38,4 +38,8 @@ package() {
    for i in "$D"/usr/bin/{bzcat,bunzip2}; do
      ln -sfv bzip2 $i
    done
+
+   if [[ ${config[build.static-libs]} = disable ]]; then
+      rm -v "$D/usr/lib/libbz2.a"
+   fi
 }

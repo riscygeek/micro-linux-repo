@@ -19,4 +19,8 @@ build() {
 
 package() {
    make prefix="$D/usr" install
+
+   if [[ ${config[build.static-libs]} = disable ]]; then
+      rm -v "$D/usr/lib/liblz4.a"
+   fi
 }

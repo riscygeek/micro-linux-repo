@@ -14,11 +14,11 @@ prepare() {
 }
 
 build() {
-   ./configure          \
-      --prefix=/usr     \
-      --enable-static   \
-      --enable-shared   \
-      --enable-thread-safe
+   ./configure             \
+      --prefix=/usr        \
+      --enable-shared      \
+      --enable-thread-safe \
+      --${config[build.static-libs]:-enable}-static
 
    pmake
 }

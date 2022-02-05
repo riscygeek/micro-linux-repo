@@ -14,13 +14,13 @@ prepare() {
 }
 
 build() {
-   ./configure          \
-      --prefix=/usr     \
-      --disable-static  \
-      --enable-shared   \
-      --disable-acl     \
-      --disable-openmp  \
-      --without-emacs   \
+   ./configure                                        \
+      --prefix=/usr                                   \
+      --${config[build.static-libs]:-enable}-static   \
+      --enable-shared                                 \
+      --disable-acl                                   \
+      --disable-openmp                                \
+      --without-emacs                                 \
       --without-git
 
    pmake
