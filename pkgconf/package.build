@@ -7,7 +7,7 @@ features=()
 depends=()
 
 provides=(pkg-config)
-conflicts=()
+conflicts=(pkg-config)
 
 sources=(https://distfiles.dereferenced.org/pkgconf/pkgconf-${pkgver}.tar.xz)
 
