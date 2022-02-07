@@ -4,7 +4,7 @@ url="https://github.com/riscygeek/minipkg2"
 description="Package manager for Micro-Linux"
 features=(sysroot cross-compile)
 
-depends=(tmp-bash)
+depends=(tmp-bash libc)
 
 sources=("https://github.com/riscygeek/minipkg2/archive/refs/tags/v${pkgver}.tar.gz")
 

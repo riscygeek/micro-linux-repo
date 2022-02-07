@@ -5,7 +5,7 @@ description="Enumerate PKCS #11 (a Cryptographic Token Interface Standard) modul
 features=()
 
 bdepends=(meson ninja)
-depends=(libtasn1)
+depends=(libtasn1 libc)
 
 sources=(https://github.com/p11-glue/p11-kit/releases/download/${pkgver}/p11-kit-${pkgver}.tar.xz)
 

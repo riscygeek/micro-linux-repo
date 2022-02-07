@@ -4,7 +4,7 @@ url="http://www.lz4.org/"
 description="Extremely fast compression algorithm"
 features=()
 
-depends=()
+depends=(libc)
 
 sources=(https://github.com/lz4/lz4/archive/refs/tags/v${pkgver}.tar.gz)
 

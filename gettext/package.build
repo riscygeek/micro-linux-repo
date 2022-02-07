@@ -4,7 +4,7 @@ url="https://www.gnu.org/software/gettext"
 description="GNU internationalization library"
 features=()
 
-depends=(libunistring)
+depends=(libunistring libc)
 
 sources=(https://ftp.gnu.org/gnu/gettext/gettext-${pkgver}.tar.xz)
 

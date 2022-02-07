@@ -4,7 +4,7 @@ url="http://www.xmlsoft.org/"
 description="XML parsing library, version 2"
 features=()
 
-depends=(python3 readline)
+depends=(python3 readline libc)
 
 sources=(http://xmlsoft.org/sources/libxml2-${pkgver}.tar.gz)
 

@@ -4,8 +4,7 @@ url="http://www.darwinsys.com/file"
 description="File type identification utility"
 features=()
 
-bdepends=()
-depends=()
+depends=(libc)
 
 sources=(http://ftp.astron.com/pub/file/file-${pkgver}.tar.gz)
 

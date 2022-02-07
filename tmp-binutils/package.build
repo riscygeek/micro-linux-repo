@@ -4,7 +4,7 @@ url="https://www.gnu.org/software/binutils"
 description="A set of programs to assemble and manipulate binary and object files"
 features=(sysroot cross-compile)
 
-depends=()
+depends=(libc)
 
 sources=(https://ftp.gnu.org/gnu/binutils/binutils-${pkgver}.tar.gz)
 

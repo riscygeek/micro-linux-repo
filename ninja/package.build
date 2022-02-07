@@ -4,7 +4,7 @@ url="https://ninja-build.org/"
 description="Small build system with a focus on speed"
 features=()
 
-depends=(python3)
+depends=(python3 libc)
 
 sources=(https://github.com/ninja-build/ninja/archive/v${pkgver}/ninja-${pkgver}.tar.gz)
 

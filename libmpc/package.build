@@ -4,7 +4,7 @@ url="http://www.multiprecision.org/"
 description="Library for the arithmetic of complex numbers with arbitrarily high precision"
 features=()
 
-depends=(libmpfr)
+depends=(libmpfr libc)
 
 sources=(https://ftp.gnu.org/gnu/mpc/mpc-${pkgver}.tar.gz)
 

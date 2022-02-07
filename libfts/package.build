@@ -5,6 +5,7 @@ description="Provides the fts(3) functions, which are missing in musl libc"
 features=()
 
 bdepends=(automake autoconf libtool)
+depends=(libc)
 
 sources=(https://github.com/void-linux/musl-fts/archive/refs/tags/v${pkgver}.tar.gz)
 

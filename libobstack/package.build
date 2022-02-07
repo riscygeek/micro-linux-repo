@@ -4,7 +4,7 @@ url="https://github.com/void-linux/musl-obstack"
 description="Standalone library to implement GNU libc's obstack"
 features=()
 
-depends=()
+depends=(libc)
 bdepends=(autoconf automake libtool)
 
 sources=(https://github.com/void-linux/musl-obstack/archive/refs/tags/v${pkgver}.tar.gz)

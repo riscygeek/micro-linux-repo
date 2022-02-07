@@ -4,7 +4,7 @@ url="https://www.libssh2.org/"
 description="A library implementing the SSH2 protocol as defined by Internet Drafts"
 features=()
 
-depends=(openssl zlib)
+depends=(openssl zlib libc)
 
 sources=(https://www.libssh2.org/download/libssh2-${pkgver}.tar.gz)
 

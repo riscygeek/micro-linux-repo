@@ -4,7 +4,6 @@ url="https://zlib.net"
 description="Compression library implementing the deflate compression method found in gzip and PKZIP"
 features=()
 
-bdepends=()
 depends=()
 
 sources=(https://zlib.net/zlib-${pkgver}.tar.xz)

@@ -4,7 +4,7 @@ url="https://www.gnu.org/software/m4"
 description="The GNU macro processor"
 features=()
 
-depends=(bash)
+depends=(bash libc)
 
 sources=(https://ftp.gnu.org/gnu/m4/m4-${pkgver}.tar.xz)
 

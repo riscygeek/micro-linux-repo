@@ -4,7 +4,7 @@ url="https://www.gnu.org/software/gcc"
 description="GNU C/C++ compiler (temporary)"
 features=(sysroot cross-compile)
 
-depends=(tmp-binutils)
+depends=(tmp-binutils libc)
 
 sources=(https://ftp.gnu.org/gnu/gcc/gcc-${pkgver}/gcc-${pkgver}.tar.gz)
 

@@ -4,7 +4,7 @@ url="https://busybox.net"
 description="Lightweight coreutils"
 features=()
 
-depends=()
+depends=(libc)
 
 sources=(https://busybox.net/downloads/busybox-${pkgver}.tar.bz2)
 

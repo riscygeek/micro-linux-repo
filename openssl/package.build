@@ -4,7 +4,7 @@ url="https://www.openssl.org"
 description="The Open Source toolkit for Secure Sockets Layer and Transport Layer Security"
 features=()
 
-depends=(zlib)
+depends=(zlib libc)
 bdepends=(perl)
 
 sources=(https://www.openssl.org/source/openssl-${pkgver}.tar.gz)

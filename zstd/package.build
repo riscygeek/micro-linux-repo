@@ -4,7 +4,7 @@ url="https://facebook.github.io/zstd/"
 description="Zstandard - Fast real-time compression algorithm"
 features=()
 
-depends=(zlib xz lz4)
+depends=(zlib xz lz4 libc)
 
 sources=(https://github.com/facebook/zstd/releases/download/v${pkgver}/zstd-${pkgver}.tar.gz)
 

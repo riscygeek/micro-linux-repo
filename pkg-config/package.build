@@ -4,8 +4,7 @@ url="https://www.freedesktop.org/wiki/Software/pkg-config"
 description="Package compiler and linker metadata toolkit"
 features=()
 
-bdepends=()
-depends=()
+depends=(libc)
 
 sources=(https://pkg-config.freedesktop.org/releases/pkg-config-${pkgver}.tar.gz)
 

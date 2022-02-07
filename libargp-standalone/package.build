@@ -5,7 +5,7 @@ url="http://www.lysator.liu.se/~nisse/misc/"
 description="Hierarchial argument parsing library broken out from glibc"
 features=()
 
-depends=()
+depends=(libc)
 bdepends=(autoconf automake libtool)
 provides=(libargp)
 

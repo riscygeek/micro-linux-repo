@@ -5,6 +5,7 @@ description="GNU troff text-formatting system"
 features=()
 
 rdepends=(perl)
+depends=(libc)
 
 sources=(https://ftp.gnu.org/gnu/groff/groff-${pkgver}.tar.gz)
 

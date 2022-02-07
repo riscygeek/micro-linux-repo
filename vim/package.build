@@ -4,7 +4,7 @@ url="https://vim.org"
 description=""
 feature=(Vi IMproved)
 
-depends=(ncurses)
+depends=(ncurses libc)
 
 sources=(http://ftp.vim.org/vim/unix/vim-${pkgver}.tar.bz2)
 

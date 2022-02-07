@@ -4,8 +4,7 @@ url="https://www.gnu.org/software/libtasn1"
 description="The ASN.1 library used in GNUTLS"
 features=()
 
-bdepends=()
-depends=()
+depends=(libc)
 
 sources=(https://ftp.gnu.org/gnu/libtasn1/libtasn1-${pkgver}.tar.gz)
 

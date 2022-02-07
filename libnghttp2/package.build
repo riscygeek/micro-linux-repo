@@ -4,7 +4,7 @@ url="https://nghttp2.org/"
 description="Framing layer of HTTP/2 is implemented as a reusable C library"
 features=()
 
-depends=(libxml2)
+depends=(libxml2 libc)
 
 sources=(https://github.com/nghttp2/nghttp2/releases/download/v${pkgver}/nghttp2-${pkgver}.tar.xz)
 

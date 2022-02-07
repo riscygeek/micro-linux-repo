@@ -4,8 +4,7 @@ url="https://www.gnu.org/software/bash"
 description="The GNU Bourne Again shell"
 features=(sysroot cross-compile)
 
-bdepends=()
-depends=()
+depends=(libc)
 
 sources=(https://ftp.gnu.org/gnu/bash/bash-${pkgver}.tar.gz)
 

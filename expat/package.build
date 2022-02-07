@@ -4,8 +4,7 @@ url="https://libexpat.github.io/"
 description="An XML parser library"
 features=()
 
-bdepends=()
-depends=()
+depends=(libc)
 
 sources=(https://prdownloads.sourceforge.net/expat/expat-${pkgver}.tar.xz)
 

@@ -4,8 +4,7 @@ url="https://sourceware.org/bzip2/"
 description="A high-quality data compression program"
 features=()
 
-bdepends=()
-depends=()
+depends=(libc)
 
 sources=(https://www.sourceware.org/pub/bzip2/bzip2-${pkgver}.tar.gz)
 

@@ -4,8 +4,7 @@ url="https://busybox.net"
 description="Lightweight coreutils (temporary)"
 features=(sysroot cross-compile)
 
-bdepends=()
-depends=()
+depends=(libc)
 
 sources=(https://busybox.net/downloads/busybox-${pkgver}.tar.bz2)
 

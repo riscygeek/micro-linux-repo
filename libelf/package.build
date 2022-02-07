@@ -4,7 +4,7 @@ url="https://sourceware.org/elfutils"
 description="Handle ELF object files and DWARF debugging information (libraries)"
 features=()
 
-depends=(zlib)
+depends=(zlib libc)
 bdepends=(libargp-standalone libfts libobstack bsd-compat-headers)
 
 sources=(https://sourceware.org/ftp/elfutils/${pkgver}/elfutils-${pkgver}.tar.bz2)

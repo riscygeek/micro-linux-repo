@@ -4,7 +4,7 @@ url="https://perl.org"
 description="A highly capable, feature-rich programming language"
 features=()
 
-depends=(gdbm zlib bzip2)
+depends=(gdbm zlib bzip2 libc)
 
 sources=(https://www.cpan.org/src/5.0/perl-5.34.0.tar.xz https://www.linuxfromscratch.org/patches/lfs/11.0/perl-5.34.0-upstream_fixes-1.patch)
 

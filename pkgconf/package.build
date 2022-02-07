@@ -4,7 +4,7 @@ url="https://github.com/pkgconf/pkgconf"
 description="Package compiler and linker metadata toolkit"
 features=()
 
-depends=()
+depends=(libc)
 
 provides=(pkg-config)
 conflicts=(pkg-config)

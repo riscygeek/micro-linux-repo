@@ -4,7 +4,7 @@ url="https://curl.se"
 description="An URL retrieval utility and library."
 features=()
 
-depends=(openssl zlib zstd libnghttp2 libssh2 libidn2)
+depends=(openssl zlib zstd libnghttp2 libssh2 libidn2 libc)
 rdepends=(make-ca)
 
 sources=(https://curl.se/download/curl-${pkgver}.tar.xz)
