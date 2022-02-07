@@ -10,7 +10,7 @@ sources=(http://ftp.vim.org/vim/unix/vim-${pkgver}.tar.bz2)
 
 prepare() {
    tar -xf "$S/vim-${pkgver}.tar.bz2"
-   cd "vim-${pkgver}"
+   cd "vim$(tr -d '.' <<< "$pkgver")"
 
    echo '#define SYS_VIMRC_FILE "/etc/vimrc"' >> src/feature.h
 }
