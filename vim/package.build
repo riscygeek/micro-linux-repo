@@ -13,11 +13,10 @@ prepare() {
    cd "vim$(tr -d '.' <<< "$pkgver")"
 
    echo '#define SYS_VIMRC_FILE "/etc/vimrc"' >> src/feature.h
-
-   pwd
 }
 
 build() {
+   pwd
    ./configure                \
       --prefix=/usr           \
       --with-features=huge    \
