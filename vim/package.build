@@ -17,6 +17,8 @@ prepare() {
 
 build() {
    pwd
+   unset S
+   unset srcdir
    ./configure                \
       --prefix=/usr           \
       --with-features=huge    \
