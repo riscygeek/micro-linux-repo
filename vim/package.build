@@ -1,0 +1,34 @@
+pkgname=vim
+pkgver=8.1
+url="https://vim.org"
+description=""
+feature=(Vi IMproved)
+
+depends=(ncurses)
+
+sources=(http://ftp.vim.org/vim/unix/vim-${pkgver}.tar.bz2)
+
+prepare() {
+   tar -xf "$S/vim-${pkgver}.tar.bz2"
+   cd "vim-${pkgver}"
+
+   echo '#define SYS_VIMRC_FILE "/etc/vimrc"' >> src/feature.h
+}
+
+build() {
+   ./configure                \
+      --prefix=/usr           \
+      --with-features=huge    \
+      --with-tlib=ncursesw    \
+      --enable-gui=no         \
+      --without-x
+
+   pmake
+}
+
+package() {
+   make DESTDIR="$D" install
+   make -C src DESTDIR="$D" installruntime
+}
+
+
