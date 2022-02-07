@@ -4,7 +4,7 @@ url="https://www.gnu.org/software/autoconf"
 description="A GNU tool for automatically configuring source code"
 features=()
 
-depends=(perl m4)
+depends=(perl m4 libc)
 
 sources=(https://ftp.gnu.org/gnu/autoconf/autoconf-${pkgver}.tar.xz)
 
