@@ -1,5 +1,5 @@
 pkgname=tmp-minipkg2
-pkgver=0.3.1
+pkgver=0.4.1
 url="https://github.com/riscygeek/minipkg2"
 description="Package manager for Micro-Linux"
 features=(sysroot cross-compile)
@@ -11,12 +11,18 @@ sources=("https://github.com/riscygeek/minipkg2/archive/refs/tags/v${pkgver}.tar
 prepare() {
    tar -xf "$S/v${pkgver}.tar.gz"
    cd "minipkg2-${pkgver}"
+
+   sed \
+      -e "s/^base_arch =.*/base_arch = '$(cut -d'-' -f1 <<<"$HOST")'/"     \
+      -e "s/^sys_root =.*/sys_root = '$ROOT'/"                             \
+      "$F/cross_file.txt" > cross_file.txt
 }
 
 build() {
-   pmake CC="${HOST}-gcc" HAS_LIBCURL=0 prefix=/tools all
+   meson setup build --prefix=/tools --buildtype=release --cross-file=cross_file.txt
+   meson compile -C build
 }
 
 package() {
-   make prefix=/tools DESTDIR="$D" install
+   meson install -C build --destdir="$D"
 }

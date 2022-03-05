@@ -16,7 +16,7 @@ prepare() {
 }
 
 build() {
-   meson setup build --prefix=/usr --libdir=lib
+   meson setup build --prefix=/usr --libdir=lib --buildtype=release
    meson compile -C build
 }
 

@@ -1,0 +1,17 @@
+[constants]
+base_arch = ...
+arch = base_arch + '-micro-linux-musl'
+toolchain = arch
+
+[binaries]
+cpp = arch + '-g++'
+strip = arch + '-strip'
+
+[properties]
+sys_root = ...
+
+[host_machine]
+system = 'linux'
+cpu_family = base_arch
+cpu = base_arch
+endian = 'little'
