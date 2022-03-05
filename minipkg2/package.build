@@ -1,5 +1,5 @@
 pkgname=minipkg2
-pkgver=0.4.4
+pkgver=0.4.5
 url="https://github.com/riscygeek/minipkg2"
 description="Package manager for Micro-Linux"
 features=()
