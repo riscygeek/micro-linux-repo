@@ -1,5 +1,5 @@
 pkgname=expat
-pkgver=2.4.1
+pkgver=2.4.7
 url="https://libexpat.github.io/"
 description="An XML parser library"
 features=()
