@@ -16,7 +16,7 @@ prepare() {
 }
 
 build() {
-   meson setup build --prefix=/usr --libdir=lib --buildtype=release
+   meson setup build --prefix=/usr --libdir=lib --buildtype=release -Denable_fakeroot=false
    meson compile -C build
 }
 

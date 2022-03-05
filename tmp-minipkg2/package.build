@@ -19,7 +19,7 @@ prepare() {
 }
 
 build() {
-   meson setup build --prefix=/tools --buildtype=release --cross-file=cross_file.txt
+   meson setup build --prefix=/tools --buildtype=release --cross-file=cross_file.txt -Denable_fakeroot=false
    meson compile -C build
 }
 

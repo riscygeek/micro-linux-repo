@@ -7,4 +7,4 @@
 # Packages
 - [ ] flex
 - [ ] bison
-- [ ] fakeroot
+- [ ] fakeroot (needed by minipkg2)
