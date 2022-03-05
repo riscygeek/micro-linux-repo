@@ -14,7 +14,7 @@ prepare() {
 
    sed \
       -e "s/^base_arch =.*/base_arch = '$(cut -d'-' -f1 <<<"$HOST")'/"     \
-      -e "s/^sys_root =.*/sys_root = '$ROOT'/"                             \
+      -e "s#^sys_root =.*#sys_root = '$ROOT'#"                             \
       "$F/cross_file.txt" > cross_file.txt
 }
 
