@@ -37,4 +37,5 @@ build() {
 package() {
    meson install -C p11-build --destdir="$D"
    ln -sf /usr/libexec/p11-kit/trust-extract-compat "$D/usr/bin/update-ca-certificates"
+   install -vDm755 "$F/post-install.sh" "$D/.meta/post-install.sh"
 }
