@@ -8,3 +8,5 @@
 - [ ] flex
 - [ ] bison
 - [ ] fakeroot (needed by minipkg2)
+- [ ] libjsoncpp (needed by cmake)
+- [ ] librhash (needed by cmake)

@@ -1,0 +1,23 @@
+pkgname=libarchive
+pkgver=3.6.0
+url="https://libarchive.org"
+description="Multi-format archive and compression library."
+features=()
+
+depends=(bzip2 expat lz4 openssl xz zlib zstd)
+
+sources=(https://libarchive.org/downloads/libarchive-${pkgver}.tar.xz)
+
+prepare() {
+   tar -xf "$S/libarchive-${pkgver}.tar.xz"
+   cd "libarchive-${pkgver}"
+}
+
+build() {
+   ./configure --prefix=/usr
+   pmake
+}
+
+package() {
+   make DESTDIR="$D" install
+}

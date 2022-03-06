@@ -4,7 +4,7 @@ url="https://www.cmake.org"
 description="A cross-platform open-source make system"
 features=()
 
-depends=(libuv zstd curl libc)
+depends=(libarchive libuv zstd curl libc)
 
 _dlver() {
    awk -F. '{printf "%s.%s\n", $1, $2}' <<<"$pkgver"
