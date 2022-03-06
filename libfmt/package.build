@@ -1,0 +1,36 @@
+pkgname=libfmt
+pkgver=8.1.1
+url="https://fmt.dev"
+description="Open-source formatting library for C++"
+features=()
+
+bdepends=(cmake)
+depends=()
+
+sources=(https://github.com/fmtlib/fmt/archive/refs/tags/${pkgver}.tar.gz)
+
+prepare() {
+   tar -xf "$S/${pkgver}.tar.gz"
+   cd "fmt-${pkgver}"
+}
+
+build() {
+   mkdir build
+   pushd build
+
+   cmake .. \
+      -DCMAKE_BUILD_TYPE=Release       \
+      -DBUILD_SHARED_LIBS=TRUE         \
+      -DCMAKE_INSTALL_PREFIX:PATH=/usr \
+      -DFMT_TEST=FALSE
+
+   pmake
+   
+   popd
+}
+
+package() {
+   pushd build
+   make DESTDIR="$D" install
+   popd
+}
