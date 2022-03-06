@@ -4,7 +4,6 @@ url="https://github.com/djlucas/make-ca"
 description="PKI setup script for LFS (and others)"
 features=()
 
-bdepends=()
 depends=(p11-kit)
 
 sources=(https://github.com/djlucas/make-ca/releases/download/v${pkgver}/make-ca-${pkgver}.tar.xz)
@@ -21,8 +20,5 @@ build() {
 package() {
    make DESTDIR="$D" install
    install -dm755 "$D/etc/ssl/local"
-}
-
-post_install() {
-   /usr/sbin/make-ca -g
+   install -vDm755 "$F/post-install.sh" "$D/.meta/post-install.sh"
 }
