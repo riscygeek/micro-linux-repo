@@ -1,5 +1,5 @@
 pkgname=filesystem
-pkgver=20220122
+pkgver=20220306
 url="https://github.com/riscygeek/micro-linux"
 description="Basic filesystem layout"
 features=(sysroot cross-compile)
