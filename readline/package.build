@@ -26,5 +26,5 @@ build() {
 
 package() {
    make SHLIB_LIBS="-lncursesw" DESTDIR="$D" install
-   install -vD644 "$F/inputrc" "$D/etc/inputrc"
+   install -vDm644 "$F/inputrc" "$D/etc/inputrc"
 }
