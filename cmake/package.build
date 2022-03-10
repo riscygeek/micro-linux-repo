@@ -1,5 +1,5 @@
 pkgname=cmake
-pkgver=3.21.2
+pkgver=3.22.3
 url="https://www.cmake.org"
 description="A cross-platform open-source make system"
 features=()
