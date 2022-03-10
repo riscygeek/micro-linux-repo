@@ -1,5 +1,5 @@
 pkgname=curl
-pkgver=7.81.0
+pkgver=7.82.0
 url="https://curl.se"
 description="An URL retrieval utility and library."
 features=()
