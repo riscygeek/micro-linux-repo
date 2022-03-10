@@ -1,5 +1,5 @@
 pkgname=vim
-pkgver=8.1
+pkgver=8.2
 url="https://vim.org"
 description=""
 feature=(Vi IMproved)
