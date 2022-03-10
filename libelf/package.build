@@ -1,5 +1,5 @@
 pkgname=libelf
-pkgver=0.185
+pkgver=0.186
 url="https://sourceware.org/elfutils"
 description="Handle ELF object files and DWARF debugging information (libraries)"
 features=()
