@@ -1,5 +1,5 @@
 pkgname=wget
-pkgver=1.21.1
+pkgver=1.21.2
 url="https://www.gnu.org/software/make"
 description="Network utility to retrieve files from the Web"
 features=()
