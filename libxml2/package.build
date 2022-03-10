@@ -1,5 +1,5 @@
 pkgname=libxml2
-pkgver=2.9.12
+pkgver=2.9.13
 url="http://www.xmlsoft.org/"
 description="XML parsing library, version 2"
 features=()
