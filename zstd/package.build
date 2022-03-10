@@ -1,5 +1,5 @@
 pkgname=zstd
-pkgver=1.5.0
+pkgver=1.5.2
 url="https://facebook.github.io/zstd/"
 description="Zstandard - Fast real-time compression algorithm"
 features=()
