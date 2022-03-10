@@ -1,5 +1,5 @@
 pkgname=python3
-pkgver=3.10.1
+pkgver=3.10.2
 url="https://www.python.org/"
 description="Next generation of the python high-level scripting"
 features=()
