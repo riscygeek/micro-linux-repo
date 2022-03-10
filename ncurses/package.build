@@ -1,5 +1,5 @@
 pkgname=ncurses
-pkgver=6.2
+pkgver=6.3
 url="https://www.gnu.org/software/ncurses"
 description="System V Release 4.0 curses emulation library"
 features=()
