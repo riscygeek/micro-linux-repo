@@ -1,5 +1,5 @@
 pkgname=gdbm
-pkgver=1.20
+pkgver=1.23
 url="https://www.gnu.org/software/gdbm"
 description="GNU database library"
 features=()
