@@ -1,7 +1,7 @@
 pkgname=libobstack
 pkgver=1.2.2
 url="https://github.com/void-linux/musl-obstack"
-description="Standalone library to implement GNU libc's obstack"
+description="Standalone library to implement GNU libcs obstack"
 features=()
 
 depends=(libc)
