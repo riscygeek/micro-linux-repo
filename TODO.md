@@ -10,3 +10,4 @@
 - [x] fakeroot (needed by minipkg2)
 - [ ] libjsoncpp (needed by cmake)
 - [ ] librhash (needed by cmake)
+- [ ] gnutls (needed by wget)
