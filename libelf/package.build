@@ -18,6 +18,9 @@ prepare() {
 
    # Patches from AlpineLinux
    patch -p1 < "$F/musl-macros.patch"
+
+   # Fix libelf.so -lintl
+   sed -i '/^libelf_so_LDLIBS =/s/^\(.*\)$/\1 -lintl/' libelf/Makefile.in
 }
 
 build() {
