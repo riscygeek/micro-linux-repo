@@ -6,8 +6,11 @@
 
 # Broken Packages
 - [ ] fakeroot
+- [ ] wget
+- [ ] libbsd
 
 # Needed Packages
 - [ ] libjsoncpp (needed by cmake)
 - [ ] librhash (needed by cmake)
 - [ ] gnutls (needed by wget)
+- [ ] libmd (needed by libbsd)
