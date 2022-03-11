@@ -1,5 +1,5 @@
 pkgname=flex
-pkver=2.6.4
+pkgver=2.6.4
 url="https://github.com/westes/flex"
 description="A tool for generating text-scanning programs"
 features=()
