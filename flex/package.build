@@ -1,0 +1,25 @@
+pkgname=flex
+pkver=2.6.4
+url="https://github.com/westes/flex"
+description="A tool for generating text-scanning programs"
+features=()
+
+depends=(libc m4)
+
+sources=(https://github.com/westes/flex/releases/download/v${pkgver}/flex-${pkgver}.tar.gz)
+
+prepare() {
+   tar -xf "$S/flex-${pkgver}.tar.gz"
+   cd "$S/flex-${pkgver}"
+}
+
+build() {
+   ./configure --prefix=/usr
+
+   pmake
+}
+
+package() {
+   make DESTDIR="$D" install
+   ln -sfv flex "$D/usr/bin/lex"
+}
