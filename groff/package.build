@@ -15,7 +15,7 @@ prepare() {
 }
 
 build() {
-   PAGE=A4 ./configure --prefix=/usr
+   PAGE=A4 ./configure --prefix=/usr --with-doc=no
    make -j1
 }
 
