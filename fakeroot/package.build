@@ -1,0 +1,24 @@
+pkgname=fakeroot
+pkgver=1.28
+url="https://tracker.debian.org/pkg/fakeroot"
+description="Tool for simulating superuser privileges"
+features=()
+
+depends=(libc)
+
+sources=(http://deb.debian.org/debian/pool/main/f/fakeroot/fakeroot_${pkgver}.orig.tar.gz)
+
+prepare() {
+   tar -xf "$S/fakeroot_${pkgver}.orig.tar.gz"
+   cd "fakeroot-${pkgver}"
+}
+
+build() {
+   ./configure --prefix=/usr
+
+   pmake
+}
+
+package() {
+   make DESTDIR="$D" install
+}
