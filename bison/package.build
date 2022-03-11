@@ -1,0 +1,24 @@
+pkgname=bison
+pkgver=3.8.2
+url="https://www.gnu.org/software/bison/bison.html"
+description="The GNU general-purpose parser generator"
+features=()
+
+depends=(libc m4 gettext)
+
+sources=(https://ftp.gnu.org/gnu/bison/bison-${pkgver}.tar.xz)
+
+prepare() {
+   tar -xf "$S/bison-${pkgver}.tar.xz"
+   cd "bison-${pkgver}"
+}
+
+build() {
+   ./configure --prefix=/usr
+
+   pmake
+}
+
+package() {
+   make DESTDIR="$D" install
+}
