@@ -12,6 +12,9 @@ sources=(https://www.kernel.org/pub/linux/docs/man-pages/man-pages-${pkgver}.tar
 prepare() {
    tar -xf "$S/man-pages-${pkgver}.tar.xz"
    cd "man-pages-${pkgver}"
+
+   # Fix compatibility with busybox install.
+   sed -i 's/-T//' Makefile
 }
 
 build() {
