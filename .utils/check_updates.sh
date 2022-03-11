@@ -21,6 +21,11 @@ getver() {
    libtool)
       sed 's/+.*$//' <<<"$ver"
       ;;
+   iana-etc)
+      curl 'https://github.com/Mic92/iana-etc/releases/latest' 2>/dev/null \
+         | sed 's@^.*releases/tag/\([^"]\+\)".*$@\1@'
+      ;;
+
    *)
       echo "$ver"
       ;;
