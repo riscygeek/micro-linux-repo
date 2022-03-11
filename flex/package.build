@@ -10,7 +10,7 @@ sources=(https://github.com/westes/flex/releases/download/v${pkgver}/flex-${pkgv
 
 prepare() {
    tar -xf "$S/flex-${pkgver}.tar.gz"
-   cd "$S/flex-${pkgver}"
+   cd "flex-${pkgver}"
 }
 
 build() {
